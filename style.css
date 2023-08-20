@@ -29,6 +29,7 @@ body {
 .navbar .logo {
     font-family: 'Chomsky', serif;
     font-size: 24px;
+    color: #000
 }
 
 .header, .content, .footer {
