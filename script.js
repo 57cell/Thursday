@@ -21,3 +21,27 @@ function handleScrollAnimation() {
 }
 
 window.addEventListener('scroll', handleScrollAnimation);
+
+function updateActiveSection() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a');
+    let currentSection = null;
+
+    sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop <= 100) { // 100px offset to handle the sticky header
+            currentSection = index;
+        }
+    });
+
+    navLinks.forEach((link, index) => {
+        link.classList.remove('active');
+
+        if (index === currentSection) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveSection);
