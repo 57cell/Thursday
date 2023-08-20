@@ -70,3 +70,4 @@ function createCalendar() {
 
 // Execute the function to create the calendar
 createCalendar();
+});
