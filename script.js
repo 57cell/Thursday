@@ -29,37 +29,60 @@ document.addEventListener('DOMContentLoaded', function () {
             imageContainer.style.filter = 'grayscale(100%)';
         });
     });
+function updateCalendar() {
+  const date = new Date();
+  const currentMonth = date.getMonth();
+  const currentYear = date.getFullYear();
+  const currentDate = date.getDate();
 
+  document.getElementById('monthYear').textContent = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date);
 
-    function createCalendar() {
-            console.log("Creating calendar"); // Logging
-    var now = new Date();
-    var firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
-    var lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+  // Clear existing calendar
+  const rows = document.querySelectorAll('.calendar-row');
+  rows.forEach(row => row.remove());
 
-    var htmlContent = '<table class="calendar-table">';
-    htmlContent += '<tr><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th></tr>';
+  // Generate new calendar
+  const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+  const lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
+  let tr = document.createElement('tr');
+  tr.className = 'calendar-row';
 
-    for (var i = 0; i < 6; i++) {
-        console.log("Loop running: " + i); // Logging
-        htmlContent += '<tr>';
-        for (var j = 0; j < 7; j++) {
-            var currentDay = new Date(firstDayOfMonth);
-            currentDay.setDate(currentDay.getDate() + (i * 7 + j) - firstDayOfMonth.getDay());
-            if (currentDay.getMonth() === now.getMonth()) {
-                if (currentDay.getDate() === now.getDate()) {
-                    htmlContent += '<td class="current-day">' + currentDay.getDate() + '</td>';
-                } else {
-                    htmlContent += '<td>' + currentDay.getDate() + '</td>';
-                }
-            } else {
-                htmlContent += '<td class="other-month"></td>';
-            }
-        }
-        htmlContent += '</tr>';
+  // Padding days
+  for (let i = 0; i < firstDay; i++) {
+    let td = document.createElement('td');
+    tr.appendChild(td);
+  }
+
+  // Fill dates
+  for (let i = 1; i <= lastDate; i++) {
+    if (tr.children.length === 7) {
+      document.querySelector('.calendar tbody').appendChild(tr);
+      tr = document.createElement('tr');
+      tr.className = 'calendar-row';
     }
-    htmlContent += '</table>';
-    document.getElementById('calendar').innerHTML = htmlContent;
+
+    let td = document.createElement('td');
+
+    if (i === currentDate) {
+      let span = document.createElement('span');
+      span.className = 'calendar__today';
+      span.textContent = 'Thursday';
+      td.appendChild(span);
+    } else {
+      td.textContent = 'Thursday';
+    }
+
+    tr.appendChild(td);
+  }
+
+  // Append remaining row
+  document.querySelector('.calendar tbody').appendChild(tr);
 }
 
-createCalendar();
+// Initial load
+updateCalendar();
+
+// Navigation buttons
+document.getElementById('prevMonth').addEventListener('click', () => /* Previous month code */);
+document.getElementById('nextMonth').addEventListener('click', () => /* Next month code */);
+
