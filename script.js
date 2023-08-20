@@ -29,3 +29,35 @@ document.addEventListener('DOMContentLoaded', function () {
             imageContainer.style.filter = 'grayscale(100%)';
         });
     });
+
+
+    function createCalendar() {
+    var now = new Date();
+    var firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    var lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+
+    var htmlContent = '<table class="calendar-table">';
+    htmlContent += '<tr><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th></tr>';
+
+    for (var i = 0; i < 6; i++) {
+        htmlContent += '<tr>';
+        for (var j = 0; j < 7; j++) {
+            var currentDay = new Date(firstDayOfMonth);
+            currentDay.setDate(currentDay.getDate() + (i * 7 + j) - firstDayOfMonth.getDay());
+            if (currentDay.getMonth() === now.getMonth()) {
+                if (currentDay.getDate() === now.getDate()) {
+                    htmlContent += '<td class="current-day">' + currentDay.getDate() + '</td>';
+                } else {
+                    htmlContent += '<td>' + currentDay.getDate() + '</td>';
+                }
+            } else {
+                htmlContent += '<td class="other-month"></td>';
+            }
+        }
+        htmlContent += '</tr>';
+    }
+    htmlContent += '</table>';
+    document.getElementById('calendar').innerHTML = htmlContent;
+}
+
+createCalendar();
