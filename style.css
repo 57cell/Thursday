@@ -10,6 +10,11 @@ header {
     justify-content: space-between;
     padding: 10px 40px;
     background: linear-gradient(to right, #1b1b1b, #2e2e2e);
+    position: fixed; /* This will make the header stick to the top */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* This ensures that the header stays above all other content */
 }
 
 #logo {
