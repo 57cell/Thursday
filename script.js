@@ -46,13 +46,41 @@ function updateActiveSection() {
 
 window.addEventListener('scroll', updateActiveSection);
 
-document.addEventListener('scroll', function () {
-    const sections = document.querySelectorAll('section');
-    sections.forEach(function (section) {
-        if (window.scrollY >= section.offsetTop && window.scrollY < section.offsetTop + section.offsetHeight) {
-            const color = section.getAttribute('data-color');
-            document.body.style.backgroundColor = color;
-        }
-    });
+// Code for creating floating bubbles
+const numberOfBubbles = 50;
+
+for (let i = 0; i < numberOfBubbles; i++) {
+    const bubble = document.createElement('div');
+    bubble.className = 'bubble';
+    document.body.appendChild(bubble);
+    positionBubble(bubble);
+    animateBubble(bubble);
+}
+
+const bubbles = document.querySelectorAll('.bubble');
+bubbles.forEach((bubble) => {
+    const size = Math.floor(Math.random() * 60) + 20;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.style.borderRadius = '50%';
+    bubble.style.position = 'absolute';
+    bubble.style.background = '#4a0072';
+    bubble.style.opacity = Math.random();
 });
 
+function positionBubble(bubble) {
+    bubble.style.top = `${Math.floor(Math.random() * window.innerHeight)}px`;
+    bubble.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
+}
+
+function animateBubble(bubble) {
+    setInterval(() => {
+        const x = parseInt(bubble.style.left, 10);
+        const y = parseInt(bubble.style.top, 10);
+        const newX = x + (Math.random() * 10 - 5);
+        const newY = y + (Math.random() * 10 - 5);
+
+        bubble.style.left = `${(newX + window.innerWidth) % window.innerWidth}px`;
+        bubble.style.top = `${(newY + window.innerHeight) % window.innerHeight}px`;
+    }, 100);
+}
