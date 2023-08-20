@@ -65,6 +65,42 @@
                 </tbody>
             </table>
         </div>
+        <style>
+            .current-day-circle {
+                width: 20px;
+                height: 20px;
+                background-color: #ffb0f3;
+                border-radius: 50%;
+                position: absolute;
+            }
+        </style>
+        <script>
+    window.onload = function() {
+        var today = new Date();
+        var day = today.getDate();
+        var month = today.getMonth();
+        var year = today.getFullYear();
+
+        // Find the cell corresponding to the current day
+        // This may vary depending on your calendar's HTML structure
+        // Here's an example that assumes each day has an id like "day-YYYY-MM-DD"
+        var currentDayCell = document.getElementById('day-' + year + '-' + (month + 1) + '-' + day);
+
+        if (currentDayCell) {
+            // Create the circle div
+            var circle = document.createElement('div');
+            circle.className = 'current-day-circle';
+
+            // Adjust the position as needed
+            circle.style.left = '50%';
+            circle.style.top = '50%';
+            circle.style.transform = 'translate(-50%, -50%)';
+
+            // Append the circle to the current day's cell
+            currentDayCell.appendChild(circle);
+                }
+            };
+        </script>
     <script src="script.js"></script>
 </body>
 </html>
