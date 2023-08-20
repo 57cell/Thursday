@@ -1,49 +1,50 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #fff5f7;
-    color: #333;
+    background: linear-gradient(to bottom, #2e2e2e, #1b1b1b);
+    color: #fff;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     padding: 10px 40px;
-    background-color: #ffb0f3;
+    background: linear-gradient(to right, #1b1b1b, #2e2e2e);
 }
 
 #logo {
     font-size: 24px;
-    color: #aad2e4;
+    color: #ffb0f3; /* Accent color */
 }
 
 nav a {
-    color: #77a5a5;
+    color: #fff;
     padding: 14px 20px;
     text-decoration: none;
+}
+
+nav a.active {
+    border-bottom: 2px solid #ffb0f3; /* Accent color */
 }
 
 .full-height {
     min-height: 100vh;
     position: relative;
+    background: linear-gradient(to bottom, #4a0072, #1b1b1b); /* Deep purple to dark gray */
 }
 
 .center-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    /* (Same as previous) */
 }
 
 .content-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
+    /* (Same as previous) */
+    background-color: rgba(255, 176, 243, 0.1); /* Slight tint of the accent color */
+    border-radius: 10px;
 }
 
 img {
     max-width: 100%;
 }
 
-/* Add additional styling for other sections */
+/* Additional styling for other sections, using gradients and dark colors */
