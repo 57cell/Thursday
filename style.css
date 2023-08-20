@@ -16,7 +16,6 @@ body {
 .nav-list {
     display: none;
     position: absolute;
-    background-color: #ffb0f3;
     top: 60px; /* Adjust based on navbar height */
     right: 0;
     width: 200px; /* Adjust based on preference */
