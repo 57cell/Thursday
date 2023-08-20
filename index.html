@@ -16,14 +16,17 @@
             var minutes = now.getMinutes();
             var ampm = hours >= 12 ? 'PM' : 'AM';
             hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
+            hours = hours ? hours : 12;
             minutes = minutes < 10 ? '0' + minutes : minutes;
             document.getElementById('date').innerText = "Thursday, " + month + " " + now.getDate() + ", " + year;
             document.getElementById('time').innerText = hours + ":" + minutes + ' ' + ampm;
         }
-        setInterval(updateClock, 1000); // Update every second
+        setInterval(updateClock, 1000);
     </script>
     <style>
+        .header h1, .header h2, .header h3 {
+            text-align: center; /* Center align text */
+        }
         #date, #time {
             font-family: "Courier New", Courier, monospace; /* Terminal font */
         }
@@ -35,8 +38,8 @@
             <div class="logo">The Thursday Council</div>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
-                <span the="bar"></span>
-                <span the="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
             <ul class="nav-list">
                 <li><a href="#home">Home</a></li>
@@ -48,8 +51,8 @@
         <header class="header">
             <h1>Good Morning!</h1>
             <h2>Today is:</h2>
-            <h3 id="date"></h3> <!-- Date will be displayed here -->
-            <h3 id="time"></h3> <!-- Time will be displayed here -->
+            <h3 id="date"></h3>
+            <h3 id="time"></h3>
         </header>
         <main class="content">
             <div class="button-container">
