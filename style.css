@@ -71,15 +71,10 @@ body {
 
 .navbar .logo {
     font-family: 'Chomsky', serif;
-    font-size: 56px;
+    font-size: 4vw; /* Scale with viewport width */
+    min-font-size: 24px; /* Minimum font size */
+    max-font-size: 56px; /* Maximum font size */
     color: #000;
-}
-
-/* Responsive styling for mobile devices */
-@media only screen and (max-width: 768px) {
-    .navbar .logo {
-        font-size: 46px; /* You can adjust this size according to your preference for mobile devices */
-    }
 }
 
 
