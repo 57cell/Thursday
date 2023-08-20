@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: #1B1B1B;
     color: #000;
     transition: background-color 0.5s, color 0.5s;
 }
