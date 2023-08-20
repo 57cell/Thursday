@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffb0f3;
+    color: #5c5c5c;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #aad2e4; /* Complementary color */
+    padding: 10px;
+    text-align: right;
+}
+
+nav a {
+    color: #5c5c5c;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    color: #77a5a5; /* Complementary color */
+}
+
+form {
+    background-color: #e4e4aa; /* Complementary color */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+label, input, textarea {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #d2aad2; /* Complementary color */
+    color: #5c5c5c;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
