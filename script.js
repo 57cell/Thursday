@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-function createCalendar() {
+  function createCalendar() {
     const today = new Date();
     const month = today.getMonth();
     const year = today.getFullYear();
@@ -36,7 +36,7 @@ function createCalendar() {
     document.getElementById('monthYear').innerText = `${monthName} ${year}`;
     
     // Start building the calendar
-    let calendarBody = '';
+    let calendarBody = '<tr>'; // Start with opening <tr> tag
     
     // Get the first day of the month
     let firstDay = new Date(year, month, 1);
@@ -46,14 +46,16 @@ function createCalendar() {
         calendarBody += '<td></td>';
     }
     
+    // Get the number of days in the current month
+    let daysInMonth = new Date(year, month + 1, 0).getDate();
+    
     // Fill in the days of the month
-    for (let i = 1; i <= 31; i++) {
+    for (let i = 1; i <= daysInMonth; i++) {
         const dayDate = new Date(year, month, i);
-        if (dayDate.getMonth() !== month) break; // Handle months with less than 31 days
         
         // Check if today
         if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-            calendarBody += `<td><span class="calendar__today circle">${i}</span></td>`;
+            calendarBody += `<td class="today"><span class="calendar__today circle">${i}</span></td>`;
         } else {
             calendarBody += `<td>${i}</td>`;
         }
@@ -63,11 +65,14 @@ function createCalendar() {
             calendarBody += '</tr><tr>';
         }
     }
+
+    // Close the last <tr> tag
+    calendarBody += '</tr>';
     
     // Add the generated body to the calendar
-    document.querySelector('.calendar tbody').innerHTML += `<tr>${calendarBody}</tr>`;
-}
+    document.querySelector('.calendar tbody').innerHTML = calendarBody;
+  }
 
-// Execute the function to create the calendar
-createCalendar();
+  // Execute the function to create the calendar
+  createCalendar();
 });
