@@ -123,17 +123,20 @@ body {
 }
 
 .btn {
-    display: inline-flex;
-    background-color: #ffb0f3;
-    color: #000;
-    padding: 10px 20px;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s, transform 0.3s;
-    white-space: nowrap; /* Prevents text from wrapping */
-    width: 150px; /* Set fixed width */
+  display: flex; /* Change to flex instead of inline-flex */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  background-color: #ffb0f3;
+  color: #000;
+  padding: 10px 20px;
+  width: 100px; /* Set fixed width */
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+  white-space: nowrap;
 }
+
 
 .btn:hover {
     background-color: #ff10f0;
