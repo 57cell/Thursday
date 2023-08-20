@@ -13,27 +13,6 @@ body {
     padding: 20px;
 }
 
-.navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffb0f3;
-    padding: 15px;
-    width: 100%;
-    margin: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    text-align: center;
-    white-space: nowrap; /* Prevents wrapping */
-    overflow: hidden;
-}
-
-.logo {
-    margin: 0 auto;
-}
-
 .nav-list {
     display: none;
     position: absolute;
@@ -52,6 +31,34 @@ body {
 .nav-list li a {
     color: #000;
     text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffb0f3;
+    padding: 15px;
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden;
+}
+
+.logo-container {
+    flex-grow: 1; /* Added to allow centering */
+    display: flex;
+    justify-content: center; /* Center the logo within the container */
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
 }
 
 .menu-toggle {
