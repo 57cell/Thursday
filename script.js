@@ -1,88 +1,105 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const animatedSection = document.querySelector('.animated-section');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navList = document.querySelector('.nav-list');
-    
-    mobileMenu.addEventListener('click', function () {
-        navList.classList.toggle('active');
+  const animatedSection = document.querySelector('.animated-section');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const navList = document.querySelector('.nav-list');
+  let currentMonth = new Date().getMonth();
+  let currentYear = new Date().getFullYear();
+
+  mobileMenu.addEventListener('click', function () {
+    navList.classList.toggle('active');
+  });
+
+  window.addEventListener('scroll', function () {
+    const sectionPos = animatedSection.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (sectionPos < windowHeight) {
+      animatedSection.classList.add('visible');
+    }
+  });
+
+  document.querySelectorAll('.quadrant').forEach(quadrant => {
+    const imageContainer = quadrant.querySelector('.image-container');
+    const button = quadrant.querySelector('.btn');
+
+    button.addEventListener('mouseover', () => {
+      imageContainer.style.filter = 'grayscale(0%)';
     });
-    
-    window.addEventListener('scroll', function () {
-        const sectionPos = animatedSection.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
 
-        if (sectionPos < windowHeight) {
-            animatedSection.classList.add('visible');
-        }
+    button.addEventListener('mouseout', () => {
+      imageContainer.style.filter = 'grayscale(100%)';
     });
-    // Removed extra closing brace and parenthesis here
+  });
 
-    document.querySelectorAll('.quadrant').forEach(quadrant => {
-        const imageContainer = quadrant.querySelector('.image-container');
-        const button = quadrant.querySelector('.btn');
+  function updateCalendar() {
+    const date = new Date(currentYear, currentMonth);
+    document.getElementById('monthYear').textContent = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date);
 
-        button.addEventListener('mouseover', () => {
-            imageContainer.style.filter = 'grayscale(0%)';
-        });
+    // Clear existing calendar
+    const tbody = document.querySelector('.calendar tbody');
+    tbody.innerHTML = '';
 
-        button.addEventListener('mouseout', () => {
-            imageContainer.style.filter = 'grayscale(100%)';
-        });
-    });
-function updateCalendar() {
-  const date = new Date();
-  const currentMonth = date.getMonth();
-  const currentYear = date.getFullYear();
-  const currentDate = date.getDate();
+    // Generate new calendar
+    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+    const lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
+    let tr = document.createElement('tr');
 
-  document.getElementById('monthYear').textContent = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date);
-
-  // Clear existing calendar
-  const rows = document.querySelectorAll('.calendar-row');
-  rows.forEach(row => row.remove());
-
-  // Generate new calendar
-  const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-  const lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
-  let tr = document.createElement('tr');
-  tr.className = 'calendar-row';
-
-  // Padding days
-  for (let i = 0; i < firstDay; i++) {
-    let td = document.createElement('td');
-    tr.appendChild(td);
-  }
-
-  // Fill dates
-  for (let i = 1; i <= lastDate; i++) {
-    if (tr.children.length === 7) {
-      document.querySelector('.calendar tbody').appendChild(tr);
-      tr = document.createElement('tr');
-      tr.className = 'calendar-row';
+    // Padding days
+    for (let i = 0; i < firstDay; i++) {
+      let td = document.createElement('td');
+      tr.appendChild(td);
     }
 
-    let td = document.createElement('td');
+    // Fill dates
+    for (let i = 1; i <= lastDate; i++) {
+      if (tr.children.length === 7) {
+        tbody.appendChild(tr);
+        tr = document.createElement('tr');
+      }
 
-    if (i === currentDate) {
-      let span = document.createElement('span');
-      span.className = 'calendar__today';
-      span.textContent = 'Thursday';
-      td.appendChild(span);
+      let td = document.createElement('td');
+
+      if (i === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
+        let span = document.createElement('span');
+        span.className = 'calendar__today circle';
+        span.textContent = 'Thursday';
+        span.style.color = "#ffb0f3"; // Highlight with the requested color
+        td.appendChild(span);
+      } else {
+        td.textContent = 'Thursday';
+      }
+
+      tr.appendChild(td);
+    }
+
+    // Append remaining row
+    tbody.appendChild(tr);
+  }
+
+  function prevMonth() {
+    if (currentMonth === 0) {
+      currentMonth = 11;
+      currentYear -= 1;
     } else {
-      td.textContent = 'Thursday';
+      currentMonth -= 1;
     }
-
-    tr.appendChild(td);
+    updateCalendar();
   }
 
-  // Append remaining row
-  document.querySelector('.calendar tbody').appendChild(tr);
-}
+  function nextMonth() {
+    if (currentMonth === 11) {
+      currentMonth = 0;
+      currentYear += 1;
+    } else {
+      currentMonth += 1;
+    }
+    updateCalendar();
+  }
 
-// Initial load
-updateCalendar();
+  // Initial load
+  updateCalendar();
 
-// Navigation buttons
-document.getElementById('prevMonth').addEventListener('click', () => /* Previous month code */);
-document.getElementById('nextMonth').addEventListener('click', () => /* Next month code */);
-
+  // Navigation buttons
+  document.getElementById('prevMonth').addEventListener('click', prevMonth);
+  document.getElementById('nextMonth').addEventListener('click', nextMonth);
+});
