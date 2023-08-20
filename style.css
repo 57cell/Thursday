@@ -34,13 +34,6 @@ body {
     margin: 0 auto;
 }
 
-/* Responsive styling for mobile devices */
-@media only screen and (max-width: 768px) {
-    .navbar .logo {
-        font-size: 24px; /* Reducing the font size for mobile devices */
-    }
-}
-
 .nav-list {
     display: none;
     position: absolute;
@@ -79,8 +72,16 @@ body {
 .navbar .logo {
     font-family: 'Chomsky', serif;
     font-size: 56px;
-    color: #000
+    color: #000;
 }
+
+/* Responsive styling for mobile devices */
+@media only screen and (max-width: 768px) {
+    .navbar .logo {
+        font-size: 24px; /* You can adjust this size according to your preference for mobile devices */
+    }
+}
+
 
 .header, .content, .footer {
     padding: 20px;
