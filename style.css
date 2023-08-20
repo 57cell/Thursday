@@ -189,3 +189,30 @@ body {
 .btn:nth-child(3):hover { transform: translate(-50%, -50%) rotate(144deg) translate(150px) rotate(-144deg) scale(1.1); }
 .btn:nth-child(4):hover { transform: translate(-50%, -50%) rotate(216deg) translate(150px) rotate(-216deg) scale(1.1); }
 .btn:nth-child(5):hover { transform: translate(-50%, -50%) rotate(288deg) translate(150px) rotate(-288deg) scale(1.1); }
+
+.calendar-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.calendar-table {
+    width: 80%;
+    border-collapse: collapse;
+    margin: auto;
+    background-color: #f3f3f3; /* Light gray background */
+}
+
+.calendar-table th,
+.calendar-table td {
+    border: 1px solid #d3d3d3;
+    padding: 10px;
+    width: 14%;
+}
+
+.current-day {
+    border: 2px solid #ffb0f3; /* Outline for the current day */
+}
+
+.other-month {
+    background-color: transparent;
+}
