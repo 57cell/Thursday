@@ -24,7 +24,7 @@ body {
     font-family: Arial, sans-serif;
     color: #fff;
     background-color: #1b1b1b; /* Primary dark gray */
-    overflow: hidden;
+    /* overflow: hidden; */ /* Commenting or removing this line */
     position: relative;
 }
 
