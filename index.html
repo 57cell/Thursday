@@ -14,9 +14,12 @@
             var year = now.getFullYear();
             var hours = now.getHours();
             var minutes = now.getMinutes();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
             minutes = minutes < 10 ? '0' + minutes : minutes;
             document.getElementById('date').innerText = "Thursday, " + month + " " + now.getDate() + ", " + year;
-            document.getElementById('time').innerText = hours + ":" + minutes;
+            document.getElementById('time').innerText = hours + ":" + minutes + ' ' + ampm;
         }
         setInterval(updateClock, 1000); // Update every second
     </script>
@@ -32,8 +35,8 @@
             <div class="logo">The Thursday Council</div>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+                <span the="bar"></span>
+                <span the="bar"></span>
             </div>
             <ul class="nav-list">
                 <li><a href="#home">Home</a></li>
