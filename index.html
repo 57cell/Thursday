@@ -46,16 +46,22 @@
             <h3 id="date"></h3>
             <h3 id="time"></h3>
         </header>
-        <main class="content">
-            <button id="prevMonth">Prev Month</button>
-            <h3 id="monthYear"></h3>
-            <button id="nextMonth">Next Month</button>
-            <div class="c-base__content ">
-                <table class="calendar">
-                    <tbody></tbody>
-                </table>
-            </div>
-        </main>
+    <div class="c-base__content">
+        <table class="calendar">
+            <tbody>
+                <tr>
+                    <th colspan="7">
+                        <span class="calendar__header">
+                            <b id="monthYear">August 2023</b>
+                        </span>
+                    </th>
+                </tr>
+                <tr>
+                    <th>T</th><th>T</th><th>T</th><th>T</th><th>T</th><th>T</th><th>T</th>
+                </tr>
+                <!-- Calendar days will be appended here -->
+            </tbody>
+        </table>
     </div>
     <script src="script.js"></script>
 </body>
