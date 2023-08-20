@@ -116,15 +116,14 @@ body {
 
 .button-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     min-height: 400px; /* Adjust based on your preferred height */
-    position: relative;
 }
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
     background-color: #ffb0f3;
     color: #000;
     padding: 10px 20px;
@@ -132,13 +131,14 @@ body {
     text-align: center;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    white-space: nowrap; /* Prevents text from wrapping */
+    min-width: max-content; /* Makes buttons as wide as the widest one */
 }
 
 .btn:hover {
     background-color: #ff10f0;
     color: #000;
     transform: scale(1.1); /* Increase the size of the button to 110% when hovered */
-}
 
 .btn:nth-child(1) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg); }
 .btn:nth-child(2) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(72deg) translate(150px) rotate(-72deg); }
