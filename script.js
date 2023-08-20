@@ -54,9 +54,13 @@ for (let i = 0; i < numberOfBubbles; i++) {
     const bubble = document.createElement('div');
     bubble.className = 'bubble';
     document.body.appendChild(bubble);
+    const size = Math.floor(Math.random() * 120) + 80;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
     positionBubble(bubble);
     animateBubble(bubble);
 }
+
 
 // Apply styling to the bubbles
 const bubbles = document.querySelectorAll('.bubble');
