@@ -78,7 +78,7 @@ body {
 /* Responsive styling for mobile devices */
 @media only screen and (max-width: 768px) {
     .navbar .logo {
-        font-size: 24px; /* You can adjust this size according to your preference for mobile devices */
+        font-size: 46px; /* You can adjust this size according to your preference for mobile devices */
     }
 }
 
