@@ -18,7 +18,7 @@ function createCalendar() {
     
     // Get the first day of the month
     let firstDay = new Date(year, month, 1);
-    
+
     // Fill in the blank spaces before the first day
     for (let i = 0; i < firstDay.getDay(); i++) {
         calendarBody += '<td></td>';
