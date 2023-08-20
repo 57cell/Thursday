@@ -178,11 +178,11 @@ body {
     color: #000;
     transform: scale(1.1); /* Increase the size of the button to 110% when hovered */
 
-.btn:nth-child(1) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg); background-color: #ffb097; }
-.btn:nth-child(2) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(72deg) translate(150px) rotate(-72deg); background-color: #b0ff97; }
-.btn:nth-child(3) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(144deg) translate(150px) rotate(-144deg); background-color: #97ffb0; }
-.btn:nth-child(4) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(216deg) translate(150px) rotate(-216deg); background-color: #97b0ff; }
-.btn:nth-child(5) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(288deg) translate(150px) rotate(-288deg); background-color: #b097ff; }
+.btn:nth-child(1) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg); background-color: #ffb097 !important; }
+.btn:nth-child(2) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(72deg) translate(150px) rotate(-72deg); background-color: #b0ff97 !important; }
+.btn:nth-child(3) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(144deg) translate(150px) rotate(-144deg); background-color: #97ffb0 !important; }
+.btn:nth-child(4) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(216deg) translate(150px) rotate(-216deg); background-color: #97b0ff !important; }
+.btn:nth-child(5) { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(288deg) translate(150px) rotate(-288deg); background-color: #b097ff !important; }
 
 /* Adjust the transform on hover for the absolute positioned buttons */
 .btn:nth-child(1):hover { transform: translate(-50%, -50%) rotate(0deg) translate(150px) rotate(0deg) scale(1.1); }
