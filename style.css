@@ -26,6 +26,8 @@ body {
     left: 0;
     z-index: 100;
     text-align: center;
+    white-space: nowrap; /* Prevents wrapping */
+    overflow: hidden;
 }
 
 .logo {
