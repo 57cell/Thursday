@@ -7,11 +7,24 @@
     }
 }
 
+@keyframes lavalamp {
+    0% {
+        text-shadow: 0px 0px 5px #ffb0f3;
+    }
+    50% {
+        text-shadow: 2px 2px 5px #ffb0f3;
+    }
+    100% {
+        text-shadow: 0px 0px 5px #ffb0f3;
+    }
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fff;
     animation: gradient-anim 20s infinite linear;
+    background-color: #1b1b1b; /* dark gray */
 }
 
 header {
@@ -35,6 +48,7 @@ nav a {
     color: #fff;
     padding: 14px 20px;
     text-decoration: none;
+    animation: lavalamp 2s infinite;
 }
 
 nav a.active {
@@ -44,7 +58,7 @@ nav a.active {
 .full-height {
     min-height: 100vh;
     position: relative;
-    background-color: transparent; /* Ensure that the gradient background from body is shown */
+    background-color: transparent;
 }
 
 .center-text {
@@ -52,8 +66,7 @@ nav a.active {
 }
 
 .content-container {
-    /* (Same as previous) */
-    background-color: rgba(255, 176, 243, 0.1);
+    background-color: rgba(255, 176, 243, 0.1); /* with the opacity, it gives a sense of floating bits */
     border-radius: 10px;
 }
 
