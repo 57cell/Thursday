@@ -96,3 +96,5 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('prevMonth').addEventListener('click', prevMonth);
   document.getElementById('nextMonth').addEventListener('click', nextMonth);
 });
+
+document.addEventListener('DOMContentLoaded', updateClock);
