@@ -119,7 +119,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    min-height: 300px; /* Adjust based on your preferred height */
+    min-height: 400px; /* Adjust based on your preferred height */
     position: relative;
 }
 
@@ -141,15 +141,16 @@ body {
 }
 
 /* Make the buttons surround a central point */
-.btn:nth-child(1) { position: absolute; top: 50%; left: 35%; transform: translate(-50%, -50%); }
-.btn:nth-child(2) { position: absolute; top: 50%; left: 65%; transform: translate(-50%, -50%); }
-.btn:nth-child(3) { position: absolute; top: 35%; left: 50%; transform: translate(-50%, -50%); }
-.btn:nth-child(4) { position: absolute; top: 65%; left: 50%; transform: translate(-50%, -50%); }
+.btn:nth-child(1) { position: absolute; top: 50%; left: 25%; transform: translate(-50%, -50%); }
+.btn:nth-child(2) { position: absolute; top: 50%; left: 75%; transform: translate(-50%, -50%); }
+.btn:nth-child(3) { position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%); }
+.btn:nth-child(4) { position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%); }
 
 /* Adjust the transform on hover for the absolute positioned buttons */
-.btn:nth-child(1):hover, .btn:nth-child(2):hover, .btn:nth-child(3):hover, .btn:nth-child(4):hover {
-    transform: translate(-50%, -50%) scale(1.1);
-}
+.btn:nth-child(1):hover { transform: translate(-50%, -50%) scale(1.1); }
+.btn:nth-child(2):hover { transform: translate(-50%, -50%) scale(1.1); }
+.btn:nth-child(3):hover { transform: translate(-50%, -50%) scale(1.1); }
+.btn:nth-child(4):hover { transform: translate(-50%, -50%) scale(1.1); }
 
 /* Mobile layout - stacked buttons */
 @media (max-width: 768px) {
