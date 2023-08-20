@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     function createCalendar() {
+            console.log("Creating calendar"); // Logging
     var now = new Date();
     var firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
     var lastDayOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0);
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     htmlContent += '<tr><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th><th>Thursday</th></tr>';
 
     for (var i = 0; i < 6; i++) {
+        console.log("Loop running: " + i); // Logging
         htmlContent += '<tr>';
         for (var j = 0; j < 7; j++) {
             var currentDay = new Date(firstDayOfMonth);
