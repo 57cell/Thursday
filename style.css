@@ -25,10 +25,17 @@ body {
     background-color: #ffb0f3;
     padding: 15px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
+
 .navbar .logo {
     font-family: 'Chomsky', serif;
-    font-size: 24px;
+    font-size: 56px;
     color: #000
 }
 
