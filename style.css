@@ -197,18 +197,18 @@ body {
 }
 
 .calendar {
-  width: 70%;
-  font-size: larger;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 20px auto;
 }
 
-.calendar th, .calendar td {
-  padding: 10px;
-  text-align: center;
+.calendar tbody tr td {
+    border: 1px solid #fff;
+    padding: 10px;
+    font-size: 20px; /* Adjust based on your preference */
 }
 
 .calendar__today {
-  background-color: #ffb0f3;
-  border-radius: 50%;
-  padding: 5px 10px;
+    font-weight: bold;
 }
