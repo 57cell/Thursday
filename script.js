@@ -25,76 +25,48 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  function updateCalendar() {
-    const date = new Date(currentYear, currentMonth);
-    document.getElementById('monthYear').textContent = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(date);
-
-    // Clear existing calendar
-    const tbody = document.querySelector('.calendar tbody');
-    tbody.innerHTML = '';
-
-    // Generate new calendar
-    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-    const lastDate = new Date(currentYear, currentMonth + 1, 0).getDate();
-    let tr = document.createElement('tr');
-
-    // Padding days
-    for (let i = 0; i < firstDay; i++) {
-      let td = document.createElement('td');
-      tr.appendChild(td);
+function createCalendar() {
+    const today = new Date();
+    const month = today.getMonth();
+    const year = today.getFullYear();
+    
+    // Get the current month's name
+    const monthName = new Intl.DateTimeFormat('en-US', { month: 'long' }).format(today);
+    
+    document.getElementById('monthYear').innerText = `${monthName} ${year}`;
+    
+    // Start building the calendar
+    let calendarBody = '';
+    
+    // Get the first day of the month
+    let firstDay = new Date(year, month, 1);
+    
+    // Fill in the blank spaces before the first day
+    for (let i = 0; i < firstDay.getDay(); i++) {
+        calendarBody += '<td></td>';
     }
-
-    // Fill dates
-    for (let i = 1; i <= lastDate; i++) {
-      if (tr.children.length === 7) {
-        tbody.appendChild(tr);
-        tr = document.createElement('tr');
-      }
-
-      let td = document.createElement('td');
-
-      if (i === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
-        let span = document.createElement('span');
-        span.className = 'calendar__today';
-        span.textContent = 'Thursday';
-        td.appendChild(span);
-      } else {
-        td.textContent = 'Thursday';
-      }
-
-      tr.appendChild(td);
+    
+    // Fill in the days of the month
+    for (let i = 1; i <= 31; i++) {
+        const dayDate = new Date(year, month, i);
+        if (dayDate.getMonth() !== month) break; // Handle months with less than 31 days
+        
+        // Check if today
+        if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+            calendarBody += `<td><span class="calendar__today circle">${i}</span></td>`;
+        } else {
+            calendarBody += `<td>${i}</td>`;
+        }
+        
+        // Check if the week is complete
+        if (dayDate.getDay() === 6) {
+            calendarBody += '</tr><tr>';
+        }
     }
+    
+    // Add the generated body to the calendar
+    document.querySelector('.calendar tbody').innerHTML += `<tr>${calendarBody}</tr>`;
+}
 
-    // Append remaining row
-    tbody.appendChild(tr);
-  }
-
-  function prevMonth() {
-    if (currentMonth === 0) {
-      currentMonth = 11;
-      currentYear -= 1;
-    } else {
-      currentMonth -= 1;
-    }
-    updateCalendar();
-  }
-
-  function nextMonth() {
-    if (currentMonth === 11) {
-      currentMonth = 0;
-      currentYear += 1;
-    } else {
-      currentMonth += 1;
-    }
-    updateCalendar();
-  }
-
-  // Initial load
-  updateCalendar();
-
-  // Navigation buttons
-  document.getElementById('prevMonth').addEventListener('click', prevMonth);
-  document.getElementById('nextMonth').addEventListener('click', nextMonth);
-});
-
-document.addEventListener('DOMContentLoaded', updateClock);
+// Execute the function to create the calendar
+createCalendar();
