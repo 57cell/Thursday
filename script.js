@@ -45,3 +45,17 @@ function updateActiveSection() {
 }
 
 window.addEventListener('scroll', updateActiveSection);
+
+function updateGradient() {
+    const gradientAngle = Math.random() * 360; // Random angle for the gradient
+    const gradientPosition = Math.random() * 100; // Random position for color stops
+
+    const gradientStyle = `linear-gradient(${gradientAngle}deg, #4a0072 ${gradientPosition}%, #1b1b1b ${100 - gradientPosition}%)`;
+
+    document.querySelectorAll('.full-height').forEach(section => {
+        section.style.background = gradientStyle;
+    });
+}
+
+// Update gradient every 5 seconds
+setInterval(updateGradient, 5000);
