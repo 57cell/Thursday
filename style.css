@@ -51,7 +51,3 @@ nav a.active {
 img {
     max-width: 100%;
 }
-
-main {
-    padding-top: 70px; /* Adjust this value based on the height of your header */
-}
