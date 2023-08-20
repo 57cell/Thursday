@@ -15,7 +15,7 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: #ffb0f3;
     padding: 15px;
@@ -30,7 +30,13 @@ body {
 
 .logo {
     margin: 0 auto;
-    flex-grow: 1;
+}
+
+/* Responsive styling for mobile devices */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        font-size: 16px; /* Reducing the font size for mobile devices */
+    }
 }
 
 .nav-list {
