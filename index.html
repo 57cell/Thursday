@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="style.css">
     <script defer src="code.js"></script>
     <title>The Thursday Council</title>
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var month = now.getMonth() + 1; // 0-indexed
+            var year = now.getFullYear();
+            document.getElementById('clock').innerHTML = "Thursday, " + month + "/" + now.getDate() + "/" + year;
+        }
+        setInterval(updateClock, 1000); // Update every second
+    </script>
 </head>
 <body>
     <div class="container">
@@ -24,8 +33,8 @@
             </ul>
         </nav>
         <header class="header">
-            <h1>Good Morning!</h1>
-            <p>Happy Thursday!</p>
+            <h1>Good Morning! Today is:</h1>
+            <p id="clock">Thursday</p> <!-- Clock will be displayed here -->
         </header>
         <main class="content">
             <div class="button-container">
