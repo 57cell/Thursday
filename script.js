@@ -1,13 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const animatedSection = document.querySelector('.animated-section');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const navList = document.querySelector('.nav-list');
   let currentMonth = new Date().getMonth();
   let currentYear = new Date().getFullYear();
-
-  mobileMenu.addEventListener('click', function () {
-    navList.classList.toggle('active');
-  });
 
   window.addEventListener('scroll', function () {
     const sectionPos = animatedSection.getBoundingClientRect().top;
@@ -61,9 +55,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (i === new Date().getDate() && currentMonth === new Date().getMonth() && currentYear === new Date().getFullYear()) {
         let span = document.createElement('span');
-        span.className = 'calendar__today circle';
+        span.className = 'calendar__today';
         span.textContent = 'Thursday';
-        span.style.color = "#ffb0f3"; // Highlight with the requested color
         td.appendChild(span);
       } else {
         td.textContent = 'Thursday';
