@@ -29,3 +29,22 @@ document.querySelectorAll('.quadrant').forEach(quadrant => {
     imageContainer.style.filter = 'grayscale(100%)';
   });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all buttons with class 'btn'
+    const buttons = document.querySelectorAll('.btn');
+
+    // Determine the maximum width among the buttons
+    let maxWidth = 0;
+    buttons.forEach((button) => {
+        const width = button.offsetWidth;
+        if (width > maxWidth) {
+            maxWidth = width;
+        }
+    });
+
+    // Set all buttons to the maximum width
+    buttons.forEach((button) => {
+        button.style.width = maxWidth + "px";
+    });
+});
