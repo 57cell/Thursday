@@ -189,15 +189,24 @@ body {
 .btn:nth-child(3):hover { transform: translate(-50%, -50%) rotate(144deg) translate(150px) rotate(-144deg) scale(1.1); }
 .btn:nth-child(4):hover { transform: translate(-50%, -50%) rotate(216deg) translate(150px) rotate(-216deg) scale(1.1); }
 .btn:nth-child(5):hover { transform: translate(-50%, -50%) rotate(288deg) translate(150px) rotate(-288deg) scale(1.1); }
-    
+
+.calendar-container {
+    width: 100%; /* Fill the entire width of the screen */
+    background-color: #1B1B1B; /* Match the background color of the body */
+    display: flex; /* Center the calendar table */
+    justify-content: center;
+    align-items: center;
+}
+
 .c-base__content {
     width: 100%;
 }
 
 .calendar {
     width: 100%;
+    max-width: 1200px; /* You can adjust this as needed */
     border-collapse: collapse;
-    margin: 20px auto;
+    margin: 40px auto;
 }
 
 .calendar th, .calendar td {
