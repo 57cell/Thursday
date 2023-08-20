@@ -26,6 +26,10 @@ body {
     padding: 15px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+.navbar .logo {
+    font-family: 'Chomsky', serif;
+    font-size: 24px;
+}
 
 .header, .content, .footer {
     padding: 20px;
