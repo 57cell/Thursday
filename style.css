@@ -69,23 +69,31 @@ body {
     margin: 3px 0;
 }
 
+:root {
+    --min-font-size: 36px;
+    --max-font-size: 56px;
+    --min-screen-size: 375px;
+    --max-screen-size: 800px;
+}
+
 .navbar .logo {
     font-family: 'Chomsky', serif;
-    font-size: calc(var(--min-font-size) + (var(--max-font-size) - var(--min-font-size)) * ((100vw - var(--min-screen-size)) / (var(--max-screen-size) - var(--min-screen-size))));
+    font-size: calc(var(--min-font-size) + (var(--max-font-size) - var(--min-font-size)) * (100vw - var(--min-screen-size)) / (var(--max-screen-size) - var(--min-screen-size)));
     color: #000;
 }
 
 @media only screen and (max-width: 375px) {
     .navbar .logo {
-        font-size: 36px;
+        font-size: var(--min-font-size);
     }
 }
 
 @media only screen and (min-width: 800px) {
     .navbar .logo {
-        font-size: 56px;
+        font-size: var(--max-font-size);
     }
 }
+
 
 
 
