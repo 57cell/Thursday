@@ -189,7 +189,16 @@ body {
 .btn:nth-child(3):hover { transform: translate(-50%, -50%) rotate(144deg) translate(150px) rotate(-144deg) scale(1.1); }
 .btn:nth-child(4):hover { transform: translate(-50%, -50%) rotate(216deg) translate(150px) rotate(-216deg) scale(1.1); }
 .btn:nth-child(5):hover { transform: translate(-50%, -50%) rotate(288deg) translate(150px) rotate(-288deg) scale(1.1); }
-
+    
+.container {
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;
+    display: flex; /* Flex container to center the children */
+    flex-direction: column;
+    align-items: center; /* Horizontally center children */
+}
+    
 .c-base__content {
   display: flex;
   justify-content: center;
@@ -210,5 +219,7 @@ body {
 }
 
 .calendar__today {
-    font-weight: bold;
+    border: 2px solid #ffb0f3;
+    border-radius: 50%;
+    padding: 8px; /* Adjust padding to create the circular effect */
 }
