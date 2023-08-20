@@ -1,17 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
     const animatedSection = document.querySelector('.animated-section');
-
-    let darkMode = false;
-
-    darkModeToggle.addEventListener('click', function () {
-        darkMode = !darkMode;
-        if (darkMode) {
-            document.body.classList.add('dark-mode');
-        } else {
-            document.body.classList.remove('dark-mode');
-        }
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navList = document.querySelector('.nav-list');
+    mobileMenu.addEventListener('click', function () {
+        navList.classList.toggle('active');
     });
+});
 
     window.addEventListener('scroll', function () {
         const sectionPos = animatedSection.getBoundingClientRect().top;
