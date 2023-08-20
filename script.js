@@ -1,54 +1,48 @@
-document.querySelectorAll('a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
-window.addEventListener('scroll', handleScrollAnimation);
-window.addEventListener('scroll', updateActiveSection);
-
 // Number of bubbles you want to create
 const numberOfBubbles = 10;
 
 // Create bubble elements and append to the body
 for (let i = 0; i < numberOfBubbles; i++) {
+    createBubble();
+}
+
+function createBubble() {
     const bubble = document.createElement('div');
     bubble.className = 'bubble';
     document.body.appendChild(bubble);
     const size = Math.floor(Math.random() * 120) + 80;
     bubble.style.width = `${size}px`;
     bubble.style.height = `${size}px`;
-    positionBubble(bubble);
-    animateBubble(bubble);
-}
-
-function positionBubble(bubble) {
     bubble.style.top = `${Math.floor(Math.random() * window.innerHeight)}px`;
     bubble.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
+
+    const directionX = Math.random() * 2 - 1;
+    const directionY = Math.random() * 2 - 1;
+    
+    const moveBubble = () => {
+        const x = parseFloat(bubble.style.left);
+        const y = parseFloat(bubble.style.top);
+        const newX = x + directionX + scrollSpeed * 0.1;
+        const newY = y + directionY + scrollSpeed * 0.1;
+        
+        bubble.style.left = `${newX}px`;
+        bubble.style.top = `${newY}px`;
+
+        // If the bubble moves off-screen, remove and recreate it
+        if (newX < 0 || newY < 0 || newX > window.innerWidth || newY > window.innerHeight) {
+            bubble.remove();
+            createBubble();
+        }
+
+        requestAnimationFrame(moveBubble);
+    };
+
+    moveBubble();
 }
 
 let scrollSpeed = 0;
-
-function animateBubble(bubble) {
-    let x = parseFloat(bubble.style.left);
-    let y = parseFloat(bubble.style.top);
-    const step = () => {
-        x += (Math.random() * 2 - 1 + scrollSpeed * 0.1);
-        y += (Math.random() * 2 - 1 + scrollSpeed * 0.1);
-
-        bubble.style.left = `${(x + window.innerWidth) % window.innerWidth}px`;
-        bubble.style.top = `${(y + window.innerHeight) % window.innerHeight}px`;
-
-        requestAnimationFrame(step);
-    };
-
-    step();
-}
-
 let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', () => {
     scrollSpeed = window.scrollY - lastScrollY;
     lastScrollY = window.scrollY;
@@ -57,6 +51,7 @@ window.addEventListener('scroll', () => {
         scrollSpeed *= 0.9;
     }, 100);
 });
+
 function handleScrollAnimation() {
     const elements = document.querySelectorAll('.fade-in-up');
     const windowHeight = window.innerHeight;
