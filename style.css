@@ -31,8 +31,11 @@ body {
     padding: 20px;
 }
 
-.header h1, .header p {
+.header h1 {
     text-align: center;
+    font-family: 'Playfair Display', serif; /* New Font */
+    font-weight: 700;
+    color: #000
 }
 
 .animated-section {
