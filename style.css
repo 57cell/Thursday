@@ -200,6 +200,8 @@ body {
 
 .c-base__content {
     width: 100%;
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center horizontally */
 }
 
 .calendar {
