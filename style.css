@@ -23,8 +23,9 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: #fff;
-    animation: gradient-anim 20s infinite linear;
-    background-color: #1b1b1b; /* dark gray */
+    background-color: #1b1b1b; /* Primary dark gray */
+    overflow: hidden;
+    position: relative;
 }
 
 header {
