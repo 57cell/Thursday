@@ -38,10 +38,12 @@ body {
     padding: 20px;
 }
 
-.header h1 {
+.header {
+    padding-top: 75px; /* Account for the height of the navbar */
+}
+
+.header h1, .header p {
     text-align: center;
-    font-family: 'Playfair Display', serif; /* New Font */
-    font-weight: 700;
 }
 
 .animated-section {
