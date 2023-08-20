@@ -52,4 +52,6 @@ img {
     max-width: 100%;
 }
 
-/* Additional styling for other sections, using gradients and dark colors */
+main {
+    padding-top: 70px; /* Adjust this value based on the height of your header */
+}
