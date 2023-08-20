@@ -9,12 +9,18 @@
     <script>
         function updateClock() {
             var now = new Date();
-            var month = now.getMonth() + 1; // 0-indexed
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var month = months[now.getMonth()];
             var year = now.getFullYear();
-            document.getElementById('clock').innerHTML = "Thursday, " + month + "/" + now.getDate() + "/" + year;
+            document.getElementById('clock').innerText = "Thursday, " + month + " " + now.getDate() + ", " + year;
         }
         setInterval(updateClock, 1000); // Update every second
     </script>
+    <style>
+        #clock {
+            font-family: "Courier New", Courier, monospace; /* Terminal font */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -33,8 +39,8 @@
             </ul>
         </nav>
         <header class="header">
-            <h1>Good Morning! Today is:</h1>
-            <p id="clock">Thursday</p> <!-- Clock will be displayed here -->
+            <h1>Good Morning!</h1>
+            <p id="clock">Today is Thursday</p> <!-- Clock will be displayed here -->
         </header>
         <main class="content">
             <div class="button-container">
