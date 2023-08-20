@@ -1,70 +1,69 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #2e2e2e, #1b1b1b);
-    color: #fff;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
-    background: linear-gradient(to right, #1b1b1b, #2e2e2e);
-    position: fixed; /* This will make the header stick to the top */
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; /* This ensures that the header stays above all other content */
-}
-
-#logo {
-    font-size: 24px;
-    color: #ffb0f3; /* Accent color */
-}
-
-nav a {
-    color: #fff;
-    padding: 14px 20px;
-    text-decoration: none;
-}
-
-nav a.active {
-    border-bottom: 2px solid #ffb0f3; /* Accent color */
-}
-
-.full-height {
-    min-height: 100vh;
-    position: relative;
-    background: linear-gradient(to bottom, #4a0072, #1b1b1b); /* Deep purple to dark gray */
-}
-
-.center-text {
-    /* (Same as previous) */
-}
-
-.content-container {
-    /* (Same as previous) */
-    background-color: rgba(255, 176, 243, 0.1); /* Slight tint of the accent color */
-    border-radius: 10px;
-}
-
-img {
-    max-width: 100%;
-}
-
 @keyframes gradient-anim {
-    0% {
+    0%, 100% {
         background: linear-gradient(180deg, #4a0072 25%, #1b1b1b 75%);
     }
     50% {
         background: linear-gradient(180deg, #4a0072 75%, #1b1b1b 25%);
     }
-    100% {
-        background: linear-gradient(180deg, #4a0072 25%, #1b1b1b 75%);
-    }
+}
+
+body {
+    animation: gradient-anim 20s infinite linear;
 }
 
 .full-height {
-    animation: gradient-anim 10s infinite;
-    /* other styles */
+    background-color: transparent;
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #2e2e2e, #1b1b1b);
+        color: #fff;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 40px;
+        background: linear-gradient(to right, #1b1b1b, #2e2e2e);
+        position: fixed; /* This will make the header stick to the top */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; /* This ensures that the header stays above all other content */
+    }
+    
+    #logo {
+        font-size: 24px;
+        color: #ffb0f3; /* Accent color */
+    }
+    
+    nav a {
+        color: #fff;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    
+    nav a.active {
+        border-bottom: 2px solid #ffb0f3; /* Accent color */
+    }
+    
+    .full-height {
+        min-height: 100vh;
+        position: relative;
+        background: linear-gradient(to bottom, #4a0072, #1b1b1b); /* Deep purple to dark gray */
+    }
+    
+    .center-text {
+        /* (Same as previous) */
+    }
+    
+    .content-container {
+        /* (Same as previous) */
+        background-color: rgba(255, 176, 243, 0.1); /* Slight tint of the accent color */
+        border-radius: 10px;
+    }
+    
+    img {
+        max-width: 100%;
+    }
 }
