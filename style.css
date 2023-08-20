@@ -72,11 +72,20 @@ body {
 .navbar .logo {
     font-family: 'Chomsky', serif;
     font-size: 4vw; /* Scale with viewport width */
-    min-font-size: 24px; /* Minimum font size */
-    max-font-size: 56px; /* Maximum font size */
     color: #000;
 }
 
+@media only screen and (max-width: 375px) {
+    .navbar .logo {
+        font-size: 36px; /* Minimum font size for small screens */
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .navbar .logo {
+        font-size: 56px; /* Maximum font size for large screens */
+    }
+}
 
 .header, .content, .footer {
     padding: 20px;
