@@ -29,21 +29,3 @@ document.addEventListener('DOMContentLoaded', function () {
             imageContainer.style.filter = 'grayscale(100%)';
         });
     });
-
-    // Get all buttons with class 'btn'
-    const buttons = document.querySelectorAll('.btn');
-    let maxWidth = 0;
-
-    buttons.forEach((button) => {
-        const width = button.offsetWidth;
-        if (width > maxWidth) {
-            maxWidth = width;
-        }
-    });
-
-    if (maxWidth > 0) { // Ensure maxWidth is not zero
-        buttons.forEach((button) => {
-            button.style.width = maxWidth + "px";
-        });
-    }
-});
