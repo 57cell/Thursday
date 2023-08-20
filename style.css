@@ -17,15 +17,55 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #ffb0f3, #1f0275);
+    background-color: #ffb0f3;
     padding: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     width: 100%;
     margin: 0;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
+    text-align: center;
+}
+
+.logo {
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+.nav-list {
+    display: none;
+    position: absolute;
+    background-color: #ffb0f3;
+    top: 60px; /* Adjust based on navbar height */
+    right: 0;
+    width: 200px; /* Adjust based on preference */
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list li {
+    padding: 10px;
+}
+
+.nav-list li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.bar {
+    background-color: #000;
+    height: 4px;
+    width: 25px;
+    margin: 3px 0;
 }
 
 .navbar .logo {
