@@ -17,3 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.querySelectorAll('.quadrant').forEach(quadrant => {
+  const imageContainer = quadrant.querySelector('.image-container');
+  const button = quadrant.querySelector('.btn');
+
+  button.addEventListener('mouseover', () => {
+    imageContainer.style.filter = 'grayscale(0%)';
+  });
+
+  button.addEventListener('mouseout', () => {
+    imageContainer.style.filter = 'grayscale(100%)';
+  });
+});
