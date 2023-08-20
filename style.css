@@ -69,30 +69,24 @@ body {
     margin: 3px 0;
 }
 
-:root {
-    --min-font-size: 36px;
-    --max-font-size: 56px;
-    --min-screen-size: 375px;
-    --max-screen-size: 800px;
-}
-
 .navbar .logo {
     font-family: 'Chomsky', serif;
     font-size: calc(var(--min-font-size) + (var(--max-font-size) - var(--min-font-size)) * ((100vw - var(--min-screen-size)) / (var(--max-screen-size) - var(--min-screen-size))));
     color: #000;
 }
 
-@media only screen and (max-width: var(--min-screen-size)) {
+@media only screen and (max-width: 375px) {
     .navbar .logo {
-        font-size: var(--min-font-size);
+        font-size: 36px;
     }
 }
 
-@media only screen and (min-width: var(--max-screen-size)) {
+@media only screen and (min-width: 800px) {
     .navbar .logo {
-        font-size: var(--max-font-size);
+        font-size: 56px;
     }
 }
+
 
 
 .header, .content, .footer {
@@ -176,17 +170,3 @@ body {
 .btn:nth-child(3):hover { transform: translate(-50%, -50%) rotate(144deg) translate(150px) rotate(-144deg) scale(1.1); }
 .btn:nth-child(4):hover { transform: translate(-50%, -50%) rotate(216deg) translate(150px) rotate(-216deg) scale(1.1); }
 .btn:nth-child(5):hover { transform: translate(-50%, -50%) rotate(288deg) translate(150px) rotate(-288deg) scale(1.1); }
-
-/* Mobile layout - stacked buttons */
-@media (max-width: 768px) {
-    .btn {
-        position: static;
-        width: 100%;
-        margin: 10px 0;
-        transform: none !important; /* Override the transform property for mobile */
-    }
-
-    .button-container {
-        min-height: auto; /* Override the height for mobile */
-    }
-}
