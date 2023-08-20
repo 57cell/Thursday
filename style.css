@@ -36,8 +36,8 @@ body {
 
 /* Responsive styling for mobile devices */
 @media only screen and (max-width: 768px) {
-    .navbar {
-        font-size: 16px; /* Reducing the font size for mobile devices */
+    .navbar .logo {
+        font-size: 24px; /* Reducing the font size for mobile devices */
     }
 }
 
