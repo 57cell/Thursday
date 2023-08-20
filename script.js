@@ -45,3 +45,14 @@ function updateActiveSection() {
 }
 
 window.addEventListener('scroll', updateActiveSection);
+
+document.addEventListener('scroll', function () {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(function (section) {
+        if (window.scrollY >= section.offsetTop && window.scrollY < section.offsetTop + section.offsetHeight) {
+            const color = section.getAttribute('data-color');
+            document.body.style.backgroundColor = color;
+        }
+    });
+});
+
