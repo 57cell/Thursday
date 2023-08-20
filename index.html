@@ -12,12 +12,16 @@
             var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
             var month = months[now.getMonth()];
             var year = now.getFullYear();
-            document.getElementById('clock').innerText = "Thursday, " + month + " " + now.getDate() + ", " + year;
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById('date').innerText = "Thursday, " + month + " " + now.getDate() + ", " + year;
+            document.getElementById('time').innerText = hours + ":" + minutes;
         }
         setInterval(updateClock, 1000); // Update every second
     </script>
     <style>
-        #clock {
+        #date, #time {
             font-family: "Courier New", Courier, monospace; /* Terminal font */
         }
     </style>
@@ -40,7 +44,9 @@
         </nav>
         <header class="header">
             <h1>Good Morning!</h1>
-            <p id="clock">Today is Thursday</p> <!-- Clock will be displayed here -->
+            <h2>Today is:</h2>
+            <h3 id="date"></h3> <!-- Date will be displayed here -->
+            <h3 id="time"></h3> <!-- Time will be displayed here -->
         </header>
         <main class="content">
             <div class="button-container">
