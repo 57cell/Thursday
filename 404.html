@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Page Not Found</title>
+    <title>Snake Game</title>
     <style>
         body {
             font-family: monospace;
@@ -25,14 +25,22 @@
     </style>
 </head>
 <body>
-    <h1>404 - Page Not Found</h1>
-    <p>Snakes:</p>
+    <h1>Snake Game</h1>
     <div id="game-container"></div>
     <script>
         const size = 20;
         let snake = [{ x: 10, y: 10 }];
         let direction = "RIGHT";
-        let food = { x: 5, y: 5 };
+        let food = generateFood();
+
+        function generateFood() {
+            let x, y;
+            do {
+                x = Math.floor(Math.random() * size);
+                y = Math.floor(Math.random() * size);
+            } while (snake.some(segment => segment.x === x && segment.y === y));
+            return { x: x, y: y };
+        }
 
         function createGameBoard() {
             const gameContainer = document.getElementById("game-container");
@@ -76,10 +84,20 @@
                 case "UP": head.y = (head.y - 1 + size) % size; break;
                 case "DOWN": head.y = (head.y + 1) % size; break;
             }
+
+            // Check if snake collides with itself
+            if (snake.some(segment => segment.x === head.x && segment.y === head.y)) {
+                alert('Game Over!');
+                snake = [{ x: 10, y: 10 }];
+                direction = "RIGHT";
+                food = generateFood();
+                return;
+            }
+
             snake.unshift(head);
 
             if (head.x === food.x && head.y === food.y) {
-                food = { x: Math.floor(Math.random() * size), y: Math.floor(Math.random() * size) };
+                food = generateFood();
             } else {
                 snake.pop();
             }
