@@ -25,6 +25,29 @@
             document.getElementById('time').innerText = hours + ":" + minutes + ':' + seconds + '.' + milliseconds + ' ' + ampm;
         }
         setInterval(updateClock, 1); // Update every millisecond
+
+        function navigateTo(page) {
+            switch (page) {
+                case "home":
+                    window.location.href = "/";
+                    break;
+                case "about":
+                    window.location.href = "about.html";
+                    break;
+                case "faq":
+                    window.location.href = "faq.html";
+                    break;
+                case "join-us":
+                    window.location.href = "join.html";
+                    break;
+                case "store":
+                    window.location.href = "store.html";
+                    break;
+                default:
+                    // Handle unknown values
+                    break;
+            }
+        }
     </script>
     <style>
         .header h1, .header h2, .header h3 {
@@ -32,6 +55,27 @@
         }
         #date, #time {
             font-family: "Courier New", Courier, monospace;
+        }
+        .dropdown-container {
+            text-align: center;
+            margin: 20px;
+        }
+        .dropdown-menu {
+            font-size: 16px;
+            padding: 10px 20px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            width: 200px;
+            background-color: #f4f4f4;
+            cursor: pointer;
+            appearance: none; /* Remove default styling in some browsers */
+        }
+        .current-day-circle {
+            width: 20px;
+            height: 20px;
+            background-color: #ffb0f3;
+            border-radius: 50%;
+            position: absolute;
         }
     </style>
 </head>
@@ -65,42 +109,33 @@
                 </tbody>
             </table>
         </div>
-        <style>
-            .current-day-circle {
-                width: 20px;
-                height: 20px;
-                background-color: #ffb0f3;
-                border-radius: 50%;
-                position: absolute;
+        <div class="dropdown-container">
+            <select class="dropdown-menu" id="navigationOptions" onchange="navigateTo(this.value)">
+                <option value="home" selected>home</option>
+                <option value="about">about</option>
+                <option value="faq">FAQ</option>
+                <option value="join-us">join us</option>
+                <option value="store">store</option>
+            </select>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            var today = new Date();
+            var day = today.getDate();
+            var month = today.getMonth();
+            var year = today.getFullYear();
+            var currentDayCell = document.getElementById('day-' + year + '-' + (month + 1) + '-' + day);
+            if (currentDayCell) {
+                var circle = document.createElement('div');
+                circle.className = 'current-day-circle';
+                circle.style.left = '50%';
+                circle.style.top = '50%';
+                circle.style.transform = 'translate(-50%, -50%)';
+                currentDayCell.appendChild(circle);
             }
-        </style>
-        <script>
-    window.onload = function() {
-        var today = new Date();
-        var day = today.getDate();
-        var month = today.getMonth();
-        var year = today.getFullYear();
-
-        // Find the cell corresponding to the current day
-        // This may vary depending on your calendar's HTML structure
-        // Here's an example that assumes each day has an id like "day-YYYY-MM-DD"
-        var currentDayCell = document.getElementById('day-' + year + '-' + (month + 1) + '-' + day);
-
-        if (currentDayCell) {
-            // Create the circle div
-            var circle = document.createElement('div');
-            circle.className = 'current-day-circle';
-
-            // Adjust the position as needed
-            circle.style.left = '50%';
-            circle.style.top = '50%';
-            circle.style.transform = 'translate(-50%, -50%)';
-
-            // Append the circle to the current day's cell
-            currentDayCell.appendChild(circle);
-                }
-            };
-        </script>
+        };
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
