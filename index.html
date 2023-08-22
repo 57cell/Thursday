@@ -60,15 +60,35 @@
             text-align: center;
             margin: 20px;
         }
+        
         .dropdown-menu {
             font-size: 16px;
+            text-align: center;
             padding: 10px 20px;
-            border: 1px solid #999;
+            border: 1px solid #ffb0f3;
             border-radius: 5px;
             width: 200px;
-            background-color: #f4f4f4;
-            cursor: pointer;
+            background-color: #1b1b1b;
+            color: #ffb0f3;
             appearance: none; /* Remove default styling in some browsers */
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Animation */
+        }
+        
+        .dropdown-menu:focus {
+            box-shadow: 0 0 5px 2px rgba(255, 176, 243, 0.5); /* Accent color */
+        }
+        
+        .dropdown-menu option {
+            background-color: #1b1b1b; /* Background color */
+            color: #ffffff; /* Text color */
+            padding: 5px;
+        }
+        
+        .dropdown-menu option:hover {
+            background-color: #ffb0f3; /* Accent color */
+            color: #1b1b1b; /* Background color */
         }
         .current-day-circle {
             width: 20px;
@@ -109,15 +129,16 @@
                 </tbody>
             </table>
         </div>
-        <div class="dropdown-container">
-            <select class="dropdown-menu" id="navigationOptions" onchange="navigateTo(this.value)">
-                <option value="home" selected>home</option>
-                <option value="about">about</option>
-                <option value="faq">FAQ</option>
-                <option value="join-us">join us</option>
-                <option value="store">store</option>
-            </select>
-        </div>
+    <div class="dropdown-container">
+        <label for="navigationOptions" style="color: #ffb0f3;">Navigate to:</label>
+        <select class="dropdown-menu" id="navigationOptions" onchange="navigateTo(this.value)">
+            <option value="home" selected>Home</option>
+            <option value="about">About</option>
+            <option value="faq">FAQ</option>
+            <option value="join-us">Join Us</option>
+            <option value="store">Store</option>
+        </select>
+    </div>
     </div>
     <script>
         window.onload = function() {
