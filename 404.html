@@ -71,10 +71,10 @@
             snake.unshift(head);
 
             if (head.top === food.top && head.left === food.left) {
+                gameContainer.removeChild(gameContainer.querySelector('.food')); // Remove existing food
                 food.top = Math.floor(Math.random() * 30) * 10;
                 food.left = Math.floor(Math.random() * 30) * 10;
-                createFood();
-                gameContainer.removeChild(gameContainer.querySelector('.food'));
+                createFood(); // Create new food
             } else {
                 snake.pop();
             }
@@ -86,7 +86,10 @@
         }
 
         function drawSnake() {
-            gameContainer.innerHTML = '';
+            document.querySelectorAll('.snake-part').forEach(part => {
+                part.remove();
+            });
+        
             snake.forEach(part => {
                 const snakePartElement = document.createElement('div');
                 snakePartElement.style.top = part.top + 'px';
@@ -95,6 +98,7 @@
                 gameContainer.appendChild(snakePartElement);
             });
         }
+
 
         window.addEventListener('keydown', e => {
             if ((e.key === 'ArrowUp' || e.key === 'w') && direction !== 'down') direction = 'up';
