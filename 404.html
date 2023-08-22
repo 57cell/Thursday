@@ -1,31 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404</title>
-  <p>ermmm ackshually that page doesnt exist</p>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      background-color: #f0f0f0;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page Not Found</title>
+    <style>
+        body {
+            font-family: monospace;
+        }
+        #game-container {
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .game-cell {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://files.catbox.moe/bngvfe.jpg" alt="404 Image">
-    <h1>404</h1>
-  </div>
+    <h1>404 - Page Not Found</h1>
+    <p>While you're here, why not play a game of Snake?</p>
+    <div id="game-container"></div>
+    <script>
+        const size = 20;
+        let snake = [{ x: 10, y: 10 }];
+        let direction = "RIGHT";
+        let food = { x: 5, y: 5 };
+
+        function createGameBoard() {
+            const gameContainer = document.getElementById("game-container");
+            for (let y = 0; y < size; y++) {
+                for (let x = 0; x < size; x++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'game-cell';
+                    gameContainer.appendChild(cell);
+                }
+            }
+        }
+
+        function drawGame() {
+            const gameContainer = document.getElementById("game-container");
+            gameContainer.innerHTML = "";
+            for (let y = 0; y < size; y++) {
+                for (let x = 0; x < size; x++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'game-cell';
+
+                    snake.forEach(segment => {
+                        if (segment.x === x && segment.y === y) {
+                            cell.style.backgroundColor = 'green';
+                        }
+                    });
+
+                    if (food.x === x && food.y === y) {
+                        cell.style.backgroundColor = 'red';
+                    }
+
+                    gameContainer.appendChild(cell);
+                }
+            }
+        }
+
+        function updateGame() {
+            const head = { ...snake[0] };
+            switch (direction) {
+                case "RIGHT": head.x = (head.x + 1) % size; break;
+                case "LEFT": head.x = (head.x - 1 + size) % size; break;
+                case "UP": head.y = (head.y - 1 + size) % size; break;
+                case "DOWN": head.y = (head.y + 1) % size; break;
+            }
+            snake.unshift(head);
+
+            if (head.x === food.x && head.y === food.y) {
+                food = { x: Math.floor(Math.random() * size), y: Math.floor(Math.random() * size) };
+            } else {
+                snake.pop();
+            }
+
+            drawGame();
+        }
+
+        document.addEventListener("keydown", event => {
+            switch (event.key) {
+                case "ArrowRight": direction = "RIGHT"; break;
+                case "ArrowLeft": direction = "LEFT"; break;
+                case "ArrowUp": direction = "UP"; break;
+                case "ArrowDown": direction = "DOWN"; break;
+            }
+        });
+
+        createGameBoard();
+        setInterval(updateGame, 100);
+    </script>
 </body>
 </html>
