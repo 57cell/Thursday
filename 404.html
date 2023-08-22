@@ -70,6 +70,12 @@
         
             if (snake.some(part => part.top === head.top && part.left === head.left) ||
                 head.top < 0 || head.left < 0 || head.top >= window.innerHeight || head.left >= window.innerWidth) {
+                // Remove the food when the snake dies
+                const foodElement = document.body.querySelector('.food');
+                if (foodElement) {
+                    document.body.removeChild(foodElement);
+                }
+        
                 snake = [{ top: (window.innerHeight / 2) - (window.innerHeight / 2) % 10, left: (window.innerWidth / 2) - (window.innerWidth / 2) % 10 }];
                 direction = 'right';
                 gameStarted = false;
