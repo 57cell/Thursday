@@ -24,20 +24,20 @@
             width: 300px;
             height: 300px;
             background-color: #ffb0f3;
-            border: 2px solid #ffffff;
+            border: 2px solid #000000;
             position: relative;
             overflow: hidden;
         }
         .snake-part {
             width: 10px;
             height: 10px;
-            background-color: #ff00d1;
+            background-color: #1b1b1b;
             position: absolute;
         }
         .food {
             width: 10px;
             height: 10px;
-            background-color: #00ff5c;
+            background-color: #B0FFBC;
             position: absolute;
         }
     </style>
@@ -62,14 +62,21 @@
 
         function moveSnake() {
             const head = { ...snake[0] };
-
+        
             if (direction === 'right') head.left += 10;
             if (direction === 'left') head.left -= 10;
             if (direction === 'up') head.top -= 10;
             if (direction === 'down') head.top += 10;
-
+        
+            // Check if the snake collides with itself
+            if (snake.some(part => part.top === head.top && part.left === head.left)) {
+                snake = [{ top: 150, left: 150 }];
+                direction = 'right';
+                return; // Stop execution if snake collides with itself
+            }
+        
             snake.unshift(head);
-
+        
             if (head.top === food.top && head.left === food.left) {
                 gameContainer.removeChild(gameContainer.querySelector('.food')); // Remove existing food
                 food.top = Math.floor(Math.random() * 30) * 10;
@@ -78,7 +85,7 @@
             } else {
                 snake.pop();
             }
-
+        
             if (head.top < 0 || head.left < 0 || head.top >= 300 || head.left >= 300) {
                 snake = [{ top: 150, left: 150 }];
                 direction = 'right';
