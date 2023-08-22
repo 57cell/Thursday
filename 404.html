@@ -49,7 +49,7 @@
         const gameContainer = document.getElementById('game-container');
         let snake = [{ top: 150, left: 150 }];
         let direction = 'right';
-        let food = { top: 50, left: 50 };
+        let food = { top: Math.floor(Math.random() * 30) * 10, left: Math.floor(Math.random() * 30) * 10 };
         const snakeSpeed = 100;
 
         function createFood() {
@@ -74,6 +74,7 @@
                 food.top = Math.floor(Math.random() * 30) * 10;
                 food.left = Math.floor(Math.random() * 30) * 10;
                 createFood();
+                gameContainer.removeChild(gameContainer.querySelector('.food'));
             } else {
                 snake.pop();
             }
@@ -96,10 +97,10 @@
         }
 
         window.addEventListener('keydown', e => {
-            if (e.key === 'ArrowUp' && direction !== 'down') direction = 'up';
-            if (e.key === 'ArrowDown' && direction !== 'up') direction = 'down';
-            if (e.key === 'ArrowLeft' && direction !== 'right') direction = 'left';
-            if (e.key === 'ArrowRight' && direction !== 'left') direction = 'right';
+            if ((e.key === 'ArrowUp' || e.key === 'w') && direction !== 'down') direction = 'up';
+            if ((e.key === 'ArrowDown' || e.key === 's') && direction !== 'up') direction = 'down';
+            if ((e.key === 'ArrowLeft' || e.key === 'a') && direction !== 'right') direction = 'left';
+            if ((e.key === 'ArrowRight' || e.key === 'd') && direction !== 'left') direction = 'right';
         });
 
         setInterval(() => {
