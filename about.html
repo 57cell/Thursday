@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Thursday Council</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Include styles from your original page */
+        .header h1,
+        .header h2,
+        .header h3 {
+            text-align: center;
+        }
+
+        #date,
+        #time {
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .dropdown-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .dropdown-menu {
+            font-size: 16px;
+            text-align: center;
+            padding: 10px 20px;
+            border: 1px solid #ffb0f3;
+            border-radius: 5px;
+            width: 200px;
+            background-color: #1b1b1b;
+            color: #ffb0f3;
+            appearance: none;
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-menu:focus {
+            box-shadow: 0 0 5px 2px rgba(255, 176, 243, 0.5);
+        }
+
+        .dropdown-menu option {
+            background-color: #1b1b1b;
+            color: #ffffff;
+            padding: 5px;
+        }
+
+        .dropdown-menu option:hover,
+        .dropdown-menu:hover {
+            background-color: #ffb0f3;
+            color: #1b1b1b;
+        }
+
+        /* Additional styles for the about page */
+        .about-section {
+            padding: 40px;
+            color: #ffb0f3;
+            background-color: #1b1b1b;
+        }
+
+        .about-section h2,
+        .about-section p {
+            text-align: center;
+        }
+
+        .about-section img {
+            width: 100%;
+            max-width: 600px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">The Thursday Council</div>
+        </nav>
+        <header class="header">
+            <h1>About Us</h1>
+        </header>
+    </div>
+    <div class="about-section">
+        <h2>Who We Are</h2>
+        <img src="images/about-image.jpg" alt="Placeholder image">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet.</p>
+    </div>
+    <div class="dropdown-container">
+        <label for="navigationOptions" style="color: #ffb0f3;"></label>
+        <select class="dropdown-menu" id="navigationOptions" onchange="navigateTo(this.value)">
+            <option value="home">Home</option>
+            <option value="about" selected>About</option>
+            <option value="faq">FAQ</option>
+            <option value="join-us">Join Us</option>
+            <option value="store">Store</option>
+        </select>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
