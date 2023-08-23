@@ -73,6 +73,27 @@
             display: block;
             margin: 20px auto;
         }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.5s ease-out;
+            visibility: hidden;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Extra padding for scrolling */
+        .about-section p {
+            padding-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -86,9 +107,19 @@
         </header>
     </div>
     <div class="about-section">
-        <h2>Who We Are</h2>
-        <img src="images/about-image.jpg" alt="Placeholder image">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet.</p>
+        <h2 class="fade-in">Who We Are</h2>
+        <img src="images/about-image.jpg" alt="Placeholder image" class="fade-in">
+        <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla. Donec malesuada lacinia velit eget
+            semper. Nam tempor diam non mauris consequat, quis gravida orci auctor.</p>
+        <p class="fade-in">More placeholder text to scroll. Donec malesuada lacinia velit eget semper. Nam tempor diam non mauris consequat, quis gravida orci auctor. Donec malesuada lacinia
+            velit eget semper. Nam tempor diam non mauris consequat, quis gravida orci auctor.</p>
+        <h2 class="fade-in">Our Mission</h2>
+        <p class="fade-in">Placeholder text for the mission section. Donec malesuada lacinia velit eget semper. Nam tempor diam non mauris consequat, quis gravida orci auctor. Donec malesuada
+            lacinia velit eget semper. Nam tempor diam non mauris consequat, quis gravida orci auctor.</p>
+        <h2 class="fade-in">Our Team</h2>
+        <p class="fade-in">Placeholder text for the team section. Donec malesuada lacinia velit eget semper. Nam tempor diam non mauris consequat, quis gravida orci auctor. Donec malesuada
+            lacinia velit eget semper. Nam tempor diam non mauris consequat, quis gravida orci auctor.</p>
+        <!-- More sections as needed -->
     </div>
     <div class="dropdown-container">
         <label for="navigationOptions" style="color: #ffb0f3;"></label>
@@ -100,7 +131,66 @@
             <option value="store">Store</option>
         </select>
     </div>
-    <script src="script.js"></script>
+        </script>
+    <style>
+        .header h1, .header h2, .header h3 {
+            text-align: center;
+        }
+        #date, #time {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">The Thursday Council</div>
+        </nav>
+        <header class="header">
+            <h1>Good Morning!</h1>
+            <h2>Today is:</h2>
+            <h3 id="date"></h3>
+            <h3 id="time"></h3>
+        </header>
+    </div>
+    <div class="calendar-container">
+        <div class="c-base__content" style="display: flex; justify-content: center; margin-top: -50px;">
+            <table class="calendar">
+                <tbody>
+                    <tr>
+                        <th colspan="7">
+                            <span class="calendar__header">
+                                <b id="monthYear"></b>
+                            </span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>T7</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th>
+                    </tr>
+                    <!-- Calendar days will be appended here -->
+                </tbody>
+            </table>
+        </div>
+        <style>
+            .current-day-circle {
+                width: 20px;
+                height: 20px;
+                background-color: #ffb0f3;
+                border-radius: 50%;
+                position: absolute;
+            }
+                window.addEventListener('scroll', function () {
+            var elements = document.querySelectorAll('.fade-in');
+            var windowHeight = window.innerHeight;
+            elements.forEach(function (element) {
+                var positionFromTop = element.getBoundingClientRect().top;
+                if (positionFromTop - windowHeight <= 0) {
+                    element.classList.add('visible');
+                }
+            });
+        });
+        </style>
+        <script>
 </body>
 
 </html>
