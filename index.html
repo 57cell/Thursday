@@ -48,6 +48,10 @@
                     break;
             }
         }
+                function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
     </script>
     <style>
         .header h1, .header h2, .header h3 {
@@ -102,11 +106,28 @@
             border-radius: 50%;
             position: absolute;
         }
-
+                .dropdown-container {
+            text-align: center;
+            margin: 20px;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            width: 100%;
+            text-align: center;
+        }
+        
         .hamburger-menu {
             cursor: pointer;
-            display: none; /* Initially hidden */
-            position: relative;
+            display: inline-block;
+            position: absolute;
+            right: 10px;
+            top: 15px;
         }
 
         .hamburger-menu div {
@@ -157,12 +178,13 @@
 <body>
     <div class="container">
         <nav class="navbar">
-            <div class="logo">The Thursday Council</div>
-            <!-- Hamburger Menu -->
             <div class="hamburger-menu" onclick="toggleMenu()">
                 <div></div>
                 <div></div>
                 <div></div>
+            </div>
+            <div class="logo-container">
+                <div class="logo">The Thursday Council</div>
             </div>
             <!-- Dropdown Menu -->
             <div class="menu" id="menu">
@@ -235,12 +257,7 @@
                 circle.style.top = '50%';
                 circle.style.transform = 'translate(-50%, -50%)';
                 currentDayCell.appendChild(circle);
-            }
-        }
-            function toggleMenu() {
-            var menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
+            };
     </script>
     <script src="script.js"></script>
 </body>
