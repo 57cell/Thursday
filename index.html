@@ -50,76 +50,6 @@
         }
     </script>
     <style>
-        .navbar {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .hamburger-menu {
-            position: absolute;
-            right: 15px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 20px;
-            width: 25px;
-        }
-        
-        .hamburger-menu div {
-            height: 4px;
-            background-color: #1b1b1b;
-            width: 100%;
-        }
-        
-        /* Main menu and submenu styling */
-        .menu {
-            position: absolute;
-            right: 0;
-            top: 100%;
-            display: none;
-            flex-direction: column;
-            background-color: #1b1b1b;
-            border: 1px solid #1b1b1b;
-            width: 200px;
-            z-index: 1000; /* Ensure it's above other elements */
-        }
-        
-        .menu-item {
-            padding: 10px;
-            color: white;
-            cursor: pointer;
-        }
-        
-        .submenu {
-            position: absolute;
-            right: 100%;
-            top: 0;
-            display: none;
-            flex-direction: column;
-            background-color: #1b1b1b;
-            border: 1px solid #1b1b1b;
-            width: 200px;
-            z-index: 1000; /* Ensure it's above other elements */
-        }
-        
-        .submenu-item {
-            padding: 10px;
-            color: white;
-            cursor: pointer;
-        }
-        
-        /* Hover effect for menu and submenu */
-        .hamburger-menu:hover .menu {
-            display: flex;
-        }
-        
-        .menu-item:hover .submenu {
-            display: flex;
-        }
-
         .header h1, .header h2, .header h3 {
             text-align: center;
         }
@@ -175,34 +105,6 @@
     </style>
 </head>
 <body>
-        <div class="hamburger-menu">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div class="menu">
-            <div class="menu-item">About Us
-                <div class="submenu">
-                    <div class="submenu-item">Who We Are</div>
-                    <div class="submenu-item">History</div>
-                    <div class="submenu-item">FAQ</div>
-                </div>
-            </div>
-            <div class="menu-item">Contact Us
-                <div class="submenu">
-                    <div class="submenu-item">Contact Information</div>
-                    <div class="submenu-item">How to Join</div>
-                    <div class="submenu-item">Notable Members</div>
-                </div>
-            </div>
-            <div class="menu-item">Support Us
-                <div class="submenu">
-                    <div class="submenu-item">Merchandise Store</div>
-                    <div class="submenu-item">Tips and Donations</div>
-                    <div class="submenu-item">Non-Monetary Support</div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <nav class="navbar">
             <div class="logo">The Thursday Council</div>
