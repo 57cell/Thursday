@@ -102,20 +102,81 @@
             border-radius: 50%;
             position: absolute;
         }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo {
+            text-align: left; /* Align logo text to the left */
+        }
+        .navbar .buttons {
+            display: flex;
+            justify-content: center;
+            width: 50%; /* Take up half the navbar width */
+        }
+        .navbar .buttons .button {
+            position: relative;
+            margin: 0 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .navbar .buttons .button .dropdown {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1b1b1b;
+            border: 1px solid #ffb0f3;
+            border-radius: 5px;
+            color: #ffb0f3;
+        }
+        .navbar .buttons .button:hover .dropdown {
+            display: block;
+        }
+        .navbar .buttons .button .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #ffb0f3;
+        }
+        .navbar .buttons .button .dropdown a:hover {
+            background-color: #ffb0f3;
+            color: #1b1b1b;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <nav class="navbar">
             <div class="logo">The Thursday Council</div>
+            <div class="buttons">
+                <div class="button">
+                    About Us
+                    <div class="dropdown">
+                        <a href="#">Who We Are</a>
+                        <a href="#">History</a>
+                        <a href="#">FAQ</a>
+                    </div>
+                </div>
+                <div class="button">
+                    Contact Us
+                    <div class="dropdown">
+                        <a href="#">Contact Information</a>
+                        <a href="#">How to Join</a>
+                        <a href="#">Notable Members</a>
+                    </div>
+                </div>
+                <div class="button">
+                    Support Us
+                    <div class="dropdown">
+                        <a href="#">Merchandise Store</a>
+                        <a href="#">Tips and Donations</a>
+                        <a href="#">Non-Monetary Support</a>
+                    </div>
+                </div>
+            </div>
         </nav>
-        <header class="header">
-            <h1>Good Morning!</h1>
-            <h2>Today is:</h2>
-            <h3 id="date"></h3>
-            <h3 id="time"></h3>
-        </header>
-    </div>
     <div class="calendar-container">
         <div class="c-base__content" style="display: flex; justify-content: center; margin-top: -50px;">
             <table class="calendar">
