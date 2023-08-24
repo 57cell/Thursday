@@ -50,6 +50,9 @@
         }
     </script>
     <style>
+        body {
+            overflow-x: hidden; /* Prevents horizontal scrolling */
+        }
         .header h1, .header h2, .header h3 {
             text-align: center;
         }
@@ -102,8 +105,7 @@
             border-radius: 50%;
             position: absolute;
         }
-
-        /* Hamburger Menu */
+         /* Hamburger Menu */
         *, *:before, *:after {
             box-sizing: border-box;
         }
@@ -184,10 +186,35 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>The Thursday Council</h1>
-        <h2 id="date"></h2>
-        <h3 id="time"></h3>
+    <div class="container">
+        <nav class="navbar">
+            <div class="logo">The Thursday Council</div>
+        </nav>
+        <header class="header">
+            <h1>Good Morning!</h1>
+            <h2>Today is:</h2>
+            <h3 id="date"></h3>
+            <h3 id="time"></h3>
+        </header>
+    </div>
+    <div class="calendar-container">
+        <div class="c-base__content" style="display: flex; justify-content: center; margin-top: -50px;">
+            <table class="calendar">
+                <tbody>
+                    <tr>
+                        <th colspan="7">
+                            <span class="calendar__header">
+                                <b id="monthYear"></b>
+                            </span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>T7</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th>
+                    </tr>
+                    <!-- Calendar days will be appended here -->
+                </tbody>
+            </table>
+        </div>
         <div class="dropdown-container">
             <label>
                 <input type="checkbox">
@@ -203,10 +230,27 @@
                 <option value="store">Store</option>
             </select>
         </div>
-        <div class="current-day-circle"></div>
     </div>
     <main>
         <!-- Your content here -->
     </main>
+    <script>
+        window.onload = function() {
+            var today = new Date();
+            var day = today.getDate();
+            var month = today.getMonth();
+            var year = today.getFullYear();
+            var currentDayCell = document.getElementById('day-' + year + '-' + (month + 1) + '-' + day);
+            if (currentDayCell) {
+                var circle = document.createElement('div');
+                circle.className = 'current-day-circle';
+                circle.style.left = '50%';
+                circle.style.top = '50%';
+                circle.style.transform = 'translate(-50%, -50%)';
+                currentDayCell.appendChild(circle);
+            }
+        };
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
