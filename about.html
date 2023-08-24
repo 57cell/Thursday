@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Include styles from your original page */
+        body {
+            color: #ffffff; /* Body text in white color */
+        }
+
         .header h1,
         .header h2,
         .header h3 {
             text-align: center;
+            animation: fadeIn 2s; /* Animation effect */
         }
 
         #date,
@@ -31,8 +36,8 @@
             border: 1px solid #ffb0f3;
             border-radius: 5px;
             width: 200px;
-            background-color: #1b1b1b;
-            color: #ffb0f3;
+            background: linear-gradient(90deg, #1b1b1b, #ffb0f3); /* Gradient background */
+            color: #1b1b1b;
             appearance: none;
             text-transform: capitalize;
             cursor: pointer;
@@ -67,11 +72,26 @@
             text-align: center;
         }
 
+        .about-section p strong {
+            font-weight: bold; /* Bold style */
+            display: block; /* New line */
+        }
+
         .about-section img {
             width: 100%;
             max-width: 600px;
             display: block;
             margin: 20px auto;
+        }
+
+        /* Animation effect */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -86,20 +106,9 @@
         </header>
     </div>
     <div class="about-section">
-        <h2>About Us</h2>
-        <p>In the year 1885, Icelandic anthropologist and post-postmodernist (and self proclaimed metamodernist) Andri Jónasson coined the term 'Thursday'. Our story starts there.</p>
+        <h2>Our Story</h2>
+        <p>In the year 1885, Icelandic anthropologist, philosopher, post-postmodernist, and self proclaimed metamodernist Andri Jónasson coined the term 'Thursday'. <strong>Our story starts there.</strong></p>
     </div>
-    <div class="dropdown-container">
-        <label for="navigationOptions" style="color: #ffb0f3;"></label>
-        <select class="dropdown-menu" id="navigationOptions" onchange="navigateTo(this.value)">
-            <option value="home">Home</option>
-            <option value="about" selected>About</option>
-            <option value="faq">FAQ</option>
-            <option value="join-us">Join Us</option>
-            <option value="store">Store</option>
-        </select>
-    </div>
-    <script src="script.js"></script>
 </body>
 
 </html>
