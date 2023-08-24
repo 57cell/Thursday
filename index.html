@@ -102,47 +102,60 @@
             border-radius: 50%;
             position: absolute;
         }
-        .navbar {
+                .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        .navbar .logo {
-            text-align: left; /* Align logo text to the left */
-        }
-        .navbar .buttons {
-            display: flex;
-            justify-content: center;
-            width: 50%; /* Take up half the navbar width */
-        }
-        .navbar .buttons .button {
-            position: relative;
-            margin: 0 10px;
+
+        .hamburger-menu {
             cursor: pointer;
-            text-align: center;
+            display: none; /* Initially hidden */
+            position: relative;
         }
-        .navbar .buttons .button .dropdown {
+
+        .hamburger-menu div {
+            width: 25px;
+            height: 3px;
+            background-color: #1b1b1b;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        .menu {
             display: none;
             position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 60px;
+            right: 10px;
             background-color: #1b1b1b;
-            border: 1px solid #ffb0f3;
-            border-radius: 5px;
-            color: #ffb0f3;
+            border: 1px solid #1b1b1b;
+            z-index: 999;
         }
-        .navbar .buttons .button:hover .dropdown {
+
+        .menu .menu-item {
+            color: #ffffff;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .menu .submenu {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: -200px;
+            width: 200px;
+            background-color: #1b1b1b;
+            border: 1px solid #1b1b1b;
+        }
+
+        .menu .submenu .submenu-item {
+            padding: 10px 20px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .menu .menu-item:hover .submenu {
             display: block;
-        }
-        .navbar .buttons .button .dropdown a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: #ffb0f3;
-        }
-        .navbar .buttons .button .dropdown a:hover {
-            background-color: #ffb0f3;
-            color: #1b1b1b;
         }
     </style>
 </head>
@@ -150,29 +163,36 @@
     <div class="container">
         <nav class="navbar">
             <div class="logo">The Thursday Council</div>
-            <div class="buttons">
-                <div class="button">
+            <!-- Hamburger Menu -->
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <!-- Dropdown Menu -->
+            <div class="menu" id="menu">
+                <div class="menu-item">
                     About Us
-                    <div class="dropdown">
-                        <a href="#">Who We Are</a>
-                        <a href="#">History</a>
-                        <a href="#">FAQ</a>
+                    <div class="submenu">
+                        <div class="submenu-item">Who We Are</div>
+                        <div class="submenu-item">History</div>
+                        <div class="submenu-item">FAQ</div>
                     </div>
                 </div>
-                <div class="button">
+                <div class="menu-item">
                     Contact Us
-                    <div class="dropdown">
-                        <a href="#">Contact Information</a>
-                        <a href="#">How to Join</a>
-                        <a href="#">Notable Members</a>
+                    <div class="submenu">
+                        <div class="submenu-item">Contact Information</div>
+                        <div class="submenu-item">How to Join</div>
+                        <div class="submenu-item">Notable Members</div>
                     </div>
                 </div>
-                <div class="button">
+                <div class="menu-item">
                     Support Us
-                    <div class="dropdown">
-                        <a href="#">Merchandise Store</a>
-                        <a href="#">Tips and Donations</a>
-                        <a href="#">Non-Monetary Support</a>
+                    <div class="submenu">
+                        <div class="submenu-item">Merchandise Store</div>
+                        <div class="submenu-item">Tips and Donations</div>
+                        <div class="submenu-item">Non-Monetary Support</div>
                     </div>
                 </div>
             </div>
@@ -221,7 +241,11 @@
                 circle.style.transform = 'translate(-50%, -50%)';
                 currentDayCell.appendChild(circle);
             }
-        };
+        }
+            function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
     </script>
     <script src="script.js"></script>
 </body>
