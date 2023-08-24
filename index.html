@@ -102,66 +102,111 @@
             border-radius: 50%;
             position: absolute;
         }
+
+        /* Hamburger Menu */
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+
+        label .menu {
+            position: absolute;
+            right: -100px;
+            top: -100px;
+            z-index: 100;
+            width: 200px;
+            height: 200px;
+            background: #FFF;
+            border-radius: 50% 50% 50% 50%;
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+            box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF;
+            cursor: pointer;
+        }
+
+        label .hamburger {
+            position: absolute;
+            top: 135px;
+            left: 50px;
+            width: 30px;
+            height: 2px;
+            background: #69D2e7;
+            display: block;
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+        }
+
+        label .hamburger:after, label .hamburger:before {
+            -webkit-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+            content: "";
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #69d2e7;
+        }
+
+        label .hamburger:before {
+            top: -10px;
+        }
+
+        label .hamburger:after {
+            bottom: -10px;
+        }
+
+        label input {
+            display: none;
+        }
+
+        label input:checked + .menu {
+            box-shadow: 0 0 0 100vw #FFF, 0 0 0 100vh #FFF;
+            border-radius: 0;
+        }
+
+        label input:checked + .menu .hamburger {
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        label input:checked + .menu .hamburger:after {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            bottom: 0;
+        }
+
+        label input:checked + .menu .hamburger:before {
+            -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+            top: 0;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <div class="logo">The Thursday Council</div>
-        </nav>
-        <header class="header">
-            <h1>Good Morning!</h1>
-            <h2>Today is:</h2>
-            <h3 id="date"></h3>
-            <h3 id="time"></h3>
-        </header>
-    </div>
-    <div class="calendar-container">
-        <div class="c-base__content" style="display: flex; justify-content: center; margin-top: -50px;">
-            <table class="calendar">
-                <tbody>
-                    <tr>
-                        <th colspan="7">
-                            <span class="calendar__header">
-                                <b id="monthYear"></b>
-                            </span>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>T7</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th>
-                    </tr>
-                    <!-- Calendar days will be appended here -->
-                </tbody>
-            </table>
+    <div class="header">
+        <h1>The Thursday Council</h1>
+        <h2 id="date"></h2>
+        <h3 id="time"></h3>
+        <div class="dropdown-container">
+            <label>
+                <input type="checkbox">
+                <div class="menu">
+                    <span class="hamburger"></span>
+                </div>
+            </label>
+            <select class="dropdown-menu" onchange="navigateTo(this.value)">
+                <option value="home">Home</option>
+                <option value="about">About</option>
+                <option value="faq">FAQ</option>
+                <option value="join-us">Join Us</option>
+                <option value="store">Store</option>
+            </select>
         </div>
-    <div class="dropdown-container">
-        <label for="navigationOptions" style="color: #ffb0f3;"></label>
-        <select class="dropdown-menu" id="navigationOptions" onchange="navigateTo(this.value)">
-            <option value="home" selected>Home</option>
-            <option value="about">About</option>
-            <option value="faq">FAQ</option>
-            <option value="join-us">Join Us</option>
-            <option value="store">Store</option>
-        </select>
+        <div class="current-day-circle"></div>
     </div>
-    </div>
-    <script>
-        window.onload = function() {
-            var today = new Date();
-            var day = today.getDate();
-            var month = today.getMonth();
-            var year = today.getFullYear();
-            var currentDayCell = document.getElementById('day-' + year + '-' + (month + 1) + '-' + day);
-            if (currentDayCell) {
-                var circle = document.createElement('div');
-                circle.className = 'current-day-circle';
-                circle.style.left = '50%';
-                circle.style.top = '50%';
-                circle.style.transform = 'translate(-50%, -50%)';
-                currentDayCell.appendChild(circle);
-            }
-        };
-    </script>
-    <script src="script.js"></script>
+    <main>
+        <!-- Your content here -->
+    </main>
 </body>
 </html>
