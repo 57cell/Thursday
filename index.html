@@ -60,13 +60,24 @@
             font-family: "Courier New", Courier, monospace;
         }
 
-        .current-day-circle {
+        .current-day {
+            position: relative;
+            text-align: center;
+        }
+        
+        .current-day::after {
+            content: "";
+            position: absolute;
             width: 20px;
             height: 20px;
-            background-color: #ffb0f3;
+            background-color: #ffb0f3; /* Change this to your desired color */
             border-radius: 50%;
-            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1; /* Place the circle behind the text */
         }
+
          /* Hamburger Menu */
         *, *:before, *:after {
             box-sizing: border-box;
@@ -186,21 +197,6 @@
         </label>
     </div>
     <script>
-        window.onload = function() {
-            var today = new Date();
-            var day = today.getDate();
-            var month = today.getMonth();
-            var year = today.getFullYear();
-            var currentDayCell = document.getElementById('day-' + year + '-' + (month + 1) + '-' + day);
-            if (currentDayCell) {
-                var circle = document.createElement('div');
-                circle.className = 'current-day-circle';
-                circle.style.left = '50%';
-                circle.style.top = '50%';
-                circle.style.transform = 'translate(-50%, -50%)';
-                currentDayCell.appendChild(circle);
-            }
-        };
     </script>
     <script src="script.js"></script>
 </body>
