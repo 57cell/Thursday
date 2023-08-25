@@ -216,6 +216,19 @@
         .menu-container label .menu {
             z-index: 98;
         }
+        @media screen and (max-width: 768px) {
+            label .menu {
+                right: auto; /* Reset the right positioning */
+                left: 0; /* Position it to the left */
+                bottom: 0; /* Position it to the bottom */
+                top: auto; /* Reset the top positioning */
+            }
+            label .hamburger {
+                top: 50px; /* Adjust top positioning inside the menu */
+                left: 135px; /* Adjust left positioning inside the menu */
+            }
+        }
+
     </style>
 </head>
 <body>
