@@ -54,9 +54,9 @@
             if (document.getElementById('menu-toggle').checked) {
                 menuLinks.style.display = 'block';
                 // Wait for the next frame so the transition will apply
-                requestAnimationFrame(function() {
+                setTimeout(function() {
                     menuLinks.style.opacity = '1';
-                });
+                }, 0);
             } else {
                 menuLinks.style.opacity = '0';
                 // Wait for the transition to finish, then hide the element
@@ -65,6 +65,7 @@
                 }, 500); // Match this duration with the CSS transition duration
             }
         }
+
 
     </script>
     <style>
@@ -185,7 +186,7 @@
             text-align: center;
             opacity: 0;
             transition: opacity 0.5s ease-in-out; /* Transition for fading effect */
-            z-index: 99; /* To make sure the links are above other elements but below the menu */
+            z-index: 100; /* To make sure the links are above other elements but below the menu */
         }
         
         .menu-links li {
@@ -197,7 +198,7 @@
         
         /* Ensure the menu itself has a higher z-index to not cover the links */
         .menu-container label .menu {
-            z-index: 100;
+            z-index: 99;
         }
     </style>
 </head>
