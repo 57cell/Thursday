@@ -53,10 +53,19 @@
             var menuLinks = document.getElementById('menu-links');
             if (document.getElementById('menu-toggle').checked) {
                 menuLinks.style.display = 'block';
+                // Wait for the next frame so the transition will apply
+                requestAnimationFrame(function() {
+                    menuLinks.style.opacity = '1';
+                });
             } else {
-                menuLinks.style.display = 'none';
+                menuLinks.style.opacity = '0';
+                // Wait for the transition to finish, then hide the element
+                setTimeout(function() {
+                    menuLinks.style.display = 'none';
+                }, 500); // Match this duration with the CSS transition duration
             }
         }
+
     </script>
     <style>
         body {
@@ -174,13 +183,21 @@
             transform: translate(-50%, -50%);
             list-style: none;
             text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out; /* Transition for fading effect */
+            z-index: 99; /* To make sure the links are above other elements but below the menu */
         }
-
+        
         .menu-links li {
             font-size: 20px;
             margin: 10px;
             color: #fff;
             cursor: pointer;
+        }
+        
+        /* Ensure the menu itself has a higher z-index to not cover the links */
+        .menu-container label .menu {
+            z-index: 100;
         }
     </style>
 </head>
