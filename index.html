@@ -59,44 +59,6 @@
         #date, #time {
             font-family: "Courier New", Courier, monospace;
         }
-        .dropdown-container {
-            text-align: center;
-            margin: 20px;
-        }
-        
-        .dropdown-menu {
-            font-size: 16px;
-            text-align: center;
-            padding: 10px 20px;
-            border: 1px solid #ffb0f3;
-            border-radius: 5px;
-            width: 200px;
-            background-color: #1b1b1b;
-            color: #ffb0f3;
-            appearance: none; /* Remove default styling in some browsers */
-            text-transform: capitalize;
-            cursor: pointer;
-            transition: all 0.3s ease; /* Animation */
-        }
-        
-        .dropdown-menu:focus {
-            box-shadow: 0 0 5px 2px rgba(255, 176, 243, 0.5); /* Accent color */
-        }
-        
-        .dropdown-menu option {
-            background-color: #1b1b1b; /* Background color */
-            color: #ffffff; /* Text color */
-            padding: 5px;
-        }
-        
-        .dropdown-menu option:hover {
-            background-color: #ffb0f3; /* Accent color */
-            color: #1b1b1b; /* Background color */
-        }
-        .dropdown-menu:hover {
-            background-color: #ffb0f3; /* Accent color */
-            color: #1b1b1b; /* Background color */
-        }
 
         .current-day-circle {
             width: 20px;
@@ -123,6 +85,10 @@
             transition: .5s ease-in-out;
             box-shadow: 0 0 0 2px #1b1b1b;
             cursor: pointer;
+        }
+        label .menu:hover {
+            background: #E3B0FF
+            box-shadow: 0 0 0 2px #E3B0FF;
         }
 
         label .hamburger {
@@ -214,21 +180,6 @@
                     <!-- Calendar days will be appended here -->
                 </tbody>
             </table>
-        </div>
-        <div class="dropdown-container">
-            <label>
-                <input type="checkbox">
-                <div class="menu">
-                    <span class="hamburger"></span>
-                </div>
-            </label>
-            <select class="dropdown-menu" onchange="navigateTo(this.value)">
-                <option value="home">Home</option>
-                <option value="about">About</option>
-                <option value="faq">FAQ</option>
-                <option value="join-us">Join Us</option>
-                <option value="store">Store</option>
-            </select>
         </div>
     </div>
     <main>
