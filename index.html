@@ -149,6 +149,55 @@
             transform: rotate(90deg);
             top: 0;
         }
+        .menu-links {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .menu-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .menu-links ul li {
+            margin: 10px 0;
+        }
+        
+        .menu-links ul li a {
+            text-decoration: none;
+            color: #1b1b1b; /* Adjust color as needed */
+            font-size: 18px; /* Adjust size as needed */
+        }
+        .menu-container {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #1b1b1b;
+            overflow-y: auto;
+            transition: right 0.3s ease;
+        }
+
+        .menu-container a {
+            display: block;
+            text-align: center;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            text-transform: capitalize;
+        }
+
+        .menu-container a:hover {
+            background-color: #ffb0f3;
+        }
+
+        input:checked + label .menu-container {
+            right: 0;
+        }
     </style>
 </head>
 <body>
@@ -181,21 +230,32 @@
                 </tbody>
             </table>
         </div>
-    <div class="button">
+    <div class="menu-container">
             <label>
                 <input type="checkbox">
                 <div class="menu">
                     <span class="hamburger"></span>
                 </div>
             </label>
+            <div class="menu-container">
+                <a href="/">Home</a>
+                <a href="about.html">About</a>
+                <a href="faq.html">FAQ</a>
+                <a href="join.html">Join Us</a>
+                <a href="store.html">Store</a>
+            </div>
         </div>
     </div>
     <main>
-        <ul>
-          <li> <a href="#">Home</a> </li>
-          <li> <a href="#">About</a> </li>
-          <li> <a href="#">Contact</a> </li>
-        </ul>
+        <div class="menu-links">
+            <ul>
+                <li><a href="javascript:void(0);" onclick="navigateTo('home')">Home</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('about')">About</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('faq')">FAQ</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('join-us')">Join Us</a></li>
+                <li><a href="javascript:void(0);" onclick="navigateTo('store')">Store</a></li>
+            </ul>
+        </div>
     </main>
     <script>
         window.onload = function() {
