@@ -218,16 +218,35 @@
         }
         @media only screen and (max-width: 768px) {
             label .menu {
-                right: 50%; /* Center horizontally */
-                top: 50%; /* Center vertically */
-                transform: translate(-50%, -50%); /* Centering adjustment */
-                background: #ffb0f3; /* Changing color for mobile */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 100;
+                width: 200px;
+                height: 200px;
+                background: #1b1b1b;
+                border-radius: 50% 50% 50% 50%;
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;
+                box-shadow: 0 0 0 2px #1b1b1b;
+                cursor: pointer;
             }
+
         
-            label .hamburger,
-            label .hamburger:after,
-            label .hamburger:before {
-                background: #1b1b1b; /* Changing color for mobile */
+            label .hamburger {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 30px;
+                height: 2px;
+                background: #ffb0f3;
+                display: block;
+                -webkit-transform-origin: center;
+                transform-origin: center;
+                -webkit-transition: .5s ease-in-out;
+                transition: .5s ease-in-out;
             }
         }
 
