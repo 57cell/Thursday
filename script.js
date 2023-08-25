@@ -24,23 +24,23 @@ function createCalendar() {
         calendarBody += '<td></td>';
     }
     
-    // Fill in the days of the month
-    for (let i = 1; i <= 31; i++) {
-        const dayDate = new Date(year, month, i);
-        if (dayDate.getMonth() !== month) break; // Handle months with less than 31 days
-        
-        // Check if today
-        if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-            calendarBody += `<td><span class="calendar__today circle">${i}</span></td>`;
-        } else {
-            calendarBody += `<td>${i}</td>`;
-        }
-        
-        // Check if the week is complete
-        if (dayDate.getDay() === 6) {
-            calendarBody += '</tr><tr>';
-        }
-    }
+  // Fill in the days of the month
+  for (let i = 1; i <= 31; i++) {
+      const dayDate = new Date(year, month, i);
+      if (dayDate.getMonth() !== month) break; // Handle months with less than 31 days
+      
+      // Check if today
+      if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+          calendarBody += `<td id="day-${year}-${month + 1}-${i}" class="current-day">${i}</td>`;
+      } else {
+          calendarBody += `<td id="day-${year}-${month + 1}-${i}">${i}</td>`;
+      }
+      
+      // Check if the week is complete
+      if (dayDate.getDay() === 6) {
+          calendarBody += '</tr><tr>';
+      }
+  }
     
     // Add the generated body to the calendar
     document.querySelector('.calendar tbody').innerHTML += `<tr>${calendarBody}</tr>`;
