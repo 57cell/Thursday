@@ -157,37 +157,59 @@
             transform: rotate(90deg);
             top: 0;
         }
+                .menu-links {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            list-style: none;
+            text-align: center;
+        }
+
+        .menu-links li {
+            font-size: 20px;
+            margin: 10px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        label input:checked + .menu ~ .menu-links {
+            display: block;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <nav class="navbar">
-            <div class="logo">The Thursday Council</div>
-        </nav>
-        <header class="header">
-            <h1>Good Morning!</h1>
-            <h2>Today is:</h2>
-            <h3 id="date"></h3>
-            <h3 id="time"></h3>
-        </header>
-    </div>
-    <div class="calendar-container">
-        <div class="c-base__content" style="display: flex; justify-content: center; margin-top: -50px;">
-            <table class="calendar">
-                <tbody>
-                    <tr>
-                        <th colspan="7">
-                            <span class="calendar__header">
-                                <b id="monthYear"></b>
-                            </span>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>T7</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th>
-                    </tr>
-                    <!-- Calendar days will be appended here -->
-                </tbody>
-            </table>
+        <div class="navbar-container">
+            <nav class="navbar">
+                <div class="logo">The Thursday Council</div>
+            </nav>
+            <header class="header">
+                <h1>Good Morning!</h1>
+                <h2>Today is:</h2>
+                <h3 id="date"></h3>
+                <h3 id="time"></h3>
+            </header>
+        </div>
+        <div class="calendar-container">
+            <div class="c-base__content" style="display: flex; justify-content: center; margin-top: -50px;">
+                <table class="calendar">
+                    <tbody>
+                        <tr>
+                            <th colspan="7">
+                                <span class="calendar__header">
+                                    <b id="monthYear"></b>
+                                </span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>T7</th><th>T1</th><th>T2</th><th>T3</th><th>T4</th><th>T5</th><th>T6</th>
+                        </tr>
+                        <!-- Calendar days will be appended here -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     <div class="menu-container">
         <label>
@@ -196,6 +218,13 @@
                 <span class="hamburger"></span>
             </div>
         </label>
+        <ul class="menu-links">
+            <li onclick="navigateTo('home')">Home</li>
+            <li onclick="navigateTo('about')">About</li>
+            <li onclick="navigateTo('faq')">FAQ</li>
+            <li onclick="navigateTo('join-us')">Join Us</li>
+            <li onclick="navigateTo('store')">Store</li>
+        </ul>
     </div>
     <script>
     </script>
