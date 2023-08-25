@@ -48,6 +48,15 @@
                     break;
             }
         }
+        
+        function toggleMenuLinks() {
+            var menuLinks = document.getElementById('menu-links');
+            if (document.getElementById('menu-toggle').checked) {
+                menuLinks.style.display = 'block';
+            } else {
+                menuLinks.style.display = 'none';
+            }
+        }
     </script>
     <style>
         body {
@@ -173,10 +182,6 @@
             color: #fff;
             cursor: pointer;
         }
-
-        label input:checked + .menu ~ .menu-links {
-            display: block;
-        }
     </style>
 </head>
 <body>
@@ -214,12 +219,12 @@
     </div>
     <div class="menu-container">
         <label>
-            <input type="checkbox" id="menu-toggle">
+            <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
             <div class="menu">
                 <span class="hamburger"></span>
             </div>
         </label>
-        <ul class="menu-links">
+        <ul class="menu-links" id="menu-links">
             <li onclick="navigateTo('home')">Home</li>
             <li onclick="navigateTo('about')">About</li>
             <li onclick="navigateTo('faq')">FAQ</li>
