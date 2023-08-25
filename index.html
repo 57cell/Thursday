@@ -216,16 +216,27 @@
         .menu-container label .menu {
             z-index: 98;
         }
-        @media screen and (max-width: 768px) {
+        @media (max-width: 767px) {
             label .menu {
-                right: auto; /* Reset the right positioning */
-                left: 0; /* Position it to the left */
-                bottom: 0; /* Position it to the bottom */
-                top: auto; /* Reset the top positioning */
+                position: fixed; /* Fixed positioning on mobile */
+                left: 0;
+                bottom: 0;
+                background: #ffb0f3;
+                box-shadow: 0 0 0 2px #ffb0f3;
             }
+
+            label .hamburger, label .hamburger:after, label .hamburger:before {
+                background: #1b1b1b;
+            }
+
+            label input:checked + .menu {
+                box-shadow: 0 0 0 100vw #ffb0f3, 0 0 0 100vh #ffb0f3;
+            }
+
+            /* Adjusting position of the hamburger lines on mobile */
             label .hamburger {
-                top: 50px; /* Adjust top positioning inside the menu */
-                left: 135px; /* Adjust left positioning inside the menu */
+                top: 15px;
+                left: 15px;
             }
         }
 
