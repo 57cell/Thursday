@@ -83,12 +83,8 @@
             border-radius: 50% 50% 50% 50%;
             -webkit-transition: .5s ease-in-out;
             transition: .5s ease-in-out;
-            box-shadow: 0 0 0 2px #E3B0FF;
+            box-shadow: 0 0 0 2px #1b1b1b;
             cursor: pointer;
-        }
-        label .menu:hover {
-            background: #E3B0FF
-            box-shadow: 0 0 0 2px #E3B0FF;
         }
 
         label .hamburger {
@@ -149,78 +145,6 @@
             transform: rotate(90deg);
             top: 0;
         }
-        .menu-links {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-        
-        .menu-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .menu-links ul li {
-            margin: 10px 0;
-        }
-        
-        .menu-links ul li a {
-            text-decoration: none;
-            color: #1b1b1b; /* Adjust color as needed */
-            font-size: 18px; /* Adjust size as needed */
-        }
-        .menu-container {
-            position: fixed;
-            top: 0;
-            right: -250px;
-            width: 250px;
-            height: 100%;
-            background-color: #1b1b1b;
-            overflow-y: auto;
-            transition: right 0.3s ease;
-        }
-
-        .menu-container a {
-            display: block;
-            text-align: center;
-            padding: 10px 20px;
-            color: #fff;
-            text-decoration: none;
-            text-transform: capitalize;
-            position: relative;
-        }
-        .menu-container .menu-links {
-            position: fixed;
-            top: 0;
-            right: -250px;
-            width: 250px;
-            height: 100%;
-            background-color: #1b1b1b;
-            overflow-y: auto;
-            transition: right 0.3s ease;
-        }
-        .menu-container .menu-links a {
-            display: block;
-            text-align: center;
-            padding: 10px 20px;
-            color: #fff;
-            text-decoration: none;
-            text-transform: capitalize;
-        }
-        .menu-container a:hover {
-            background-color: #ffb0f3;
-        }
-        .menu-container .menu-links a:hover {
-            background-color: #ffb0f3;
-        }
-        #menu-toggle:checked + label + .menu-links {
-            right: 0;
-        }
-        input:checked + label .menu-container {
-            right: 0;
-        }
     </style>
 </head>
 <body>
@@ -260,13 +184,6 @@
                 <span class="hamburger"></span>
             </div>
         </label>
-        <div class="menu-links">
-            <a href="/">Home</a>
-            <a href="about.html">About</a>
-            <a href="faq.html">FAQ</a>
-            <a href="join.html">Join Us</a>
-            <a href="store.html">Store</a>
-        </div>
     </div>
     <script>
         window.onload = function() {
