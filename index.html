@@ -216,27 +216,18 @@
         .menu-container label .menu {
             z-index: 98;
         }
-        @media (max-width: 767px) {
+        @media only screen and (max-width: 768px) {
             label .menu {
-                position: fixed; /* Fixed positioning on mobile */
-                left: 0;
-                bottom: 0;
-                background: #ffb0f3;
-                box-shadow: 0 0 0 2px #ffb0f3;
+                right: 50%; /* Center horizontally */
+                top: 50%; /* Center vertically */
+                transform: translate(-50%, -50%); /* Centering adjustment */
+                background: #ffb0f3; /* Changing color for mobile */
             }
-
-            label .hamburger, label .hamburger:after, label .hamburger:before {
-                background: #1b1b1b;
-            }
-
-            label input:checked + .menu {
-                box-shadow: 0 0 0 100vw #ffb0f3, 0 0 0 100vh #ffb0f3;
-            }
-
-            /* Adjusting position of the hamburger lines on mobile */
-            label .hamburger {
-                top: 15px;
-                left: 15px;
+        
+            label .hamburger,
+            label .hamburger:after,
+            label .hamburger:before {
+                background: #1b1b1b; /* Changing color for mobile */
             }
         }
 
