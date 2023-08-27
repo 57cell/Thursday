@@ -235,6 +235,7 @@
         }
         @media screen and (max-width: 768px) {
           label .menu {
+            background: #ffb0f3;
             top: auto;  /* Reset to auto */
             bottom: -100px;  /* Position at the bottom */
             right: -100px;  /* Position to the right */
@@ -249,18 +250,18 @@
             top: 40%;
           }
         
-          /* Reverse colors for mobile */
-          label .menu,
           label .hamburger,
           label .hamburger:before,
-          label .hamburger:after,
-          .menu-links li:hover {
+          label .hamburger:after {
             background: #1b1b1b;
-            color: #ffb0f3;
-            box-shadow: 0 0 0 2px #ffb0f3;
+            color: #1b1b1b;
+            box-shadow: 0 0 0 2px #1b1b1b;
           }
         
           .menu-links li {
+            color: #000;
+          }
+          .menu-links li:hover {
             color: #1b1b1b;
           }
         }
