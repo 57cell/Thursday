@@ -233,10 +233,24 @@
         .menu-container label .menu {
             z-index: 98;
         }
-        @media only screen and (max-width: 768px) {
-            label {
-                display: none; /* Hide only the label containing the hamburger, not the whole container */
-            }
+        @media screen and (max-width: 768px) {
+          label .menu {
+            right: -60px; /* adjusted position */
+            top: -60px;  /* adjusted position */
+            width: 120px; /* reduced size */
+            height: 120px; /* reduced size */
+          }
+          
+          label .hamburger {
+            top: 81px; /* adjusted position */
+            left: 30px; /* adjusted position */
+            width: 18px; /* reduced size */
+            height: 1.2px; /* reduced size */
+          }
+          
+          .menu-links {
+            top: 40%;
+          }
         }
 
     </style>
