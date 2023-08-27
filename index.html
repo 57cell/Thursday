@@ -234,38 +234,35 @@
             z-index: 98;
         }
         @media screen and (max-width: 768px) {
-            label .menu {
-                bottom: 0;  
-                right: 0;
-                top: auto;
-            }
-            
-            label .hamburger {
-                top: calc(50% - 1px); /* Centering vertically */
-                left: calc(50% - 15px); /* Centering horizontally */
-            }
-
-            /* Swap colors */
-            body, .menu-links li:hover {
-                background-color: #1b1b1b;
-                color: #ffb0f3;
-            }
-
-            label .menu, label .hamburger, label .hamburger:before, label .hamburger:after, .menu-links li {
-                background: #ffb0f3;
-                color: #1b1b1b;
-            }
-
-            .current-day::after {
-                background-color: #1b1b1b;
-            }
-
-            /* To position menu at the bottom right */
-            .menu-container {
-                position: fixed;
-                bottom: 0;
-                right: 0;
-            }
+          label .menu {
+            top: auto;  /* Reset to auto */
+            bottom: -100px;  /* Position at the bottom */
+            right: -100px;  /* Position to the right */
+          }
+        
+          label .hamburger {
+            top: 135px;  /* Same as before, since it's relative to the circle */
+            left: 135px;  /* Adjusted position, right above the quarter circle */
+          }
+        
+          .menu-links {
+            top: 40%;
+          }
+        
+          /* Reverse colors for mobile */
+          label .menu,
+          label .hamburger,
+          label .hamburger:before,
+          label .hamburger:after,
+          .menu-links li:hover {
+            background: #1b1b1b;
+            color: #ffb0f3;
+            box-shadow: 0 0 0 2px #ffb0f3;
+          }
+        
+          .menu-links li {
+            color: #1b1b1b;
+          }
         }
 
     </style>
