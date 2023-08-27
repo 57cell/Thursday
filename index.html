@@ -70,15 +70,16 @@
             }
         }
         
-        function toggleMenuByContainerClick() {
+        function toggleMenuByContainerClick(event) {
             var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-            if (width <= 768) {
+            if (width <= 768 && event.target.id === "main-container") {
                 toggleMenuLinks(true);
             }
         }
         
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("main-container").addEventListener("click", toggleMenuByContainerClick);
+            document.getElementById("main-container").addEventListener("touchstart", toggleMenuByContainerClick);
         });
 
 
@@ -233,9 +234,8 @@
             z-index: 98;
         }
         @media only screen and (max-width: 768px) {
-            /* ... existing styles ... */
-            .menu-container {
-                display: none;
+            label {
+                display: none; /* Hide only the label containing the hamburger, not the whole container */
             }
         }
 
