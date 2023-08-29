@@ -240,6 +240,109 @@
             justify-content: center;
             align-items: center;
          }
+        .collapse-area {
+          background: #D7D8DC;
+        }
+        .panel {
+          margin-top: 0px !important;
+          border-radius: 0px !important;
+          border: none;
+          border-bottom-color: #D7D8DC;
+          box-shadow: 0 0px 0px 0 transparent !important;
+          -moz-box-shadow: 0 0px 0px 0 transparent !important;
+          -webkit-box-shadow: 0 0px 0px 0 transparent !important;
+          -o-box-shadow: 0 0px 0px 0 transparent !important;
+        }
+        .panel .panel-heading {
+          border-radius: 0px !important;
+          background: #f5f6f8;
+          padding: 0px !important;
+          border-bottom: 0px solid #DDDEE2;
+        }
+        .panel .panel-heading .panel-title a {
+          text-decoration: none;
+          font-weight: bold;
+          display: block;
+          padding: 23px 15px;
+          font-weight: 300;
+          color: #60626d;
+          background-color: #ffffff;
+          line-height: 29px;
+          position: relative;
+        }
+        .panel .panel-heading .panel-title a:hover,
+        .panel .panel-heading .panel-title a:active {
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          color: #9a4a5a;
+        }
+        .panel .panel-heading .panel-title a span {
+          float: left;
+          margin-top: 15px;
+          margin-right: 30px;
+          transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+        }
+        .panel .panel-heading .panel-title a .bar,
+        .panel .panel-heading .panel-title a .bar:after {
+          border-width: 1px;
+          border-style: solid;
+          width: 21px;
+          border-radius: 10px;
+          transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+        }
+        .panel .panel-heading .panel-title a .bar:after {
+          content: "";
+          height: 0;
+          position: absolute;
+          top: 38px;
+          left: 15px;
+        }
+        .panel .panel-heading .panel-title a.collapsed {
+          background-color: #f5f6f8 !important;
+          border-bottom: 1px solid #eeeef3;
+          position: relative;
+          transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+        }
+        .panel .panel-heading .panel-title a.collapsed .bar {
+          border-color: #75767F;
+        }
+        .panel .panel-heading .panel-title a.collapsed .bar:after {
+          transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
+          border-color: #75767F;
+          transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+        }
+        .panel-collapse {
+          background-color: #ffffff;
+        }
+        .panel-collapse .panel-body {
+          background-color: #ffffff;
+          border: 0px solid !important;
+          line-height: 26px;
+          font-weight: 300;
+          margin-left: 50px;
+          padding-bottom: 20px;
+          padding-top: 0px;
+          color: #60626d;
+        }
         @media screen and (max-width: 768px) {
           label .menu {
             background: #ffb0f3;
@@ -287,64 +390,59 @@
         <header class="header">
             <h1>Frequently Asked Questions</h1>
         </header>
-        <section>
-          <div class="row">
-            <div class="col-md-6 col-lg-4 mb-4">
-              <h6 class="mb-3 text-primary"><i class="far fa-paper-plane text-primary pe-2"></i> A simple
-                question?</h6>
-              <p>
-                <strong><u>Absolutely!</u></strong> We work with top payment companies which guarantees
-                your
-                safety and
-                security. All billing information is stored on our payment processing partner.
-              </p>
-            </div>
-        
-            <div class="col-md-6 col-lg-4 mb-4">
-              <h6 class="mb-3 text-primary"><i class="fas fa-pen-alt text-primary pe-2"></i> A question
-                that
-                is longer then the previous one?</h6>
-              <p>
-                <strong><u>Yes, it is possible!</u></strong> You can cancel your subscription anytime in
-                your
-                account. Once the subscription is
-                cancelled, you will not be charged next month.
-              </p>
-            </div>
-        
-            <div class="col-md-6 col-lg-4 mb-4">
-              <h6 class="mb-3 text-primary"><i class="fas fa-user text-primary pe-2"></i> A simple
-                question?
-              </h6>
-              <p>
-                Currently, we only offer monthly subscription. You can upgrade or cancel your monthly
-                account at any time with no further obligation.
-              </p>
-            </div>
-        
-            <div class="col-md-6 col-lg-4 mb-4">
-              <h6 class="mb-3 text-primary"><i class="fas fa-rocket text-primary pe-2"></i> A simple
-                question?
-              </h6>
-              <p>
-                Yes. Go to the billing section of your dashboard and update your payment information.
-              </p>
-            </div>
-        
-            <div class="col-md-6 col-lg-4 mb-4">
-              <h6 class="mb-3 text-primary"><i class="fas fa-home text-primary pe-2"></i> A simple
-                question?
-              </h6>
-              <p><strong><u>Unfortunately no</u>.</strong> We do not issue full or partial refunds for any
-                reason.</p>
-            </div>
-        
-            <div class="col-md-6 col-lg-4 mb-4">
-              <h6 class="mb-3 text-primary"><i class="fas fa-book-open text-primary pe-2"></i> Another
-                question that is longer than usual</h6>
-              <p>
-                Of course! We’re happy to offer a free plan to anyone who wants to try our service.
-              </p>
+        <section class="collapse-area">
+          <div class="container">
+            <div class="row">
+              <div class="collapse-tab col-xs-12">
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default" id="panel1">
+                    <!-- Start: Tab-1 -->
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="">
+                          What if I need to cancel my booking at late notice?
+                          <span class="bar hidden-xs"></span>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default" id="panel2">
+                    <!-- Start: Tab-2 -->
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
+                          Which payment methods do you accept?
+                          <span class="bar hidden-xs"></span>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                      <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default" id="panel3">
+                    <!-- Start: Tab-3 -->
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" class="collapsed">
+                          I'd like to buy 5 tickets, is there bulk pricing?
+                          <span class="bar hidden-xs"></span>
+                        </a>
+                      </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                      <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
