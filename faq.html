@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="style.css">
     <title>The Thursday Council</title>
     <script>
+        type="text/javascript">
+            $(document).ready(function(){
+                $('.faqlink').click(function(){
+                    $('.content').hide();
+                    $(this).next('.content').show();
+                });
+            });
         function toggleElement(id)
         {
             if(document.getElementById(id).style.display == 'none')
@@ -355,6 +362,10 @@
           padding-top: 0px;
           color: #60626d;
         }
+        type="text/css">
+        .faqcontent {
+            display: hidden;
+        }
         @media screen and (max-width: 768px) {
           label .menu {
             background: #ffb0f3;
@@ -418,11 +429,11 @@
             <li onclick="navigateTo('store')">Store</li>
         </ul>
     </div>
-    <p>
-        <a href="javascript:toggleElement('a1')">Why Thursday?</a>
-    </p>
-    <div id="a1" style="display:none">
-        MMMMMMM
-    </div>
+    <a class="faqlink" href="#">q 1</a>
+        <div class="faqcontent">a1</div>
+    <a class="faqlink" href="#">q 2</a>
+        <div class="faqcontent">a2</div>
+    <a class="faqlink" href="#">q 3</a>
+        <div class="faqcontent">a3</div>
 </body>
 </html>
