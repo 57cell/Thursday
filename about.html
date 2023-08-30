@@ -6,26 +6,6 @@
     <link rel="stylesheet" href="style.css">
     <title>The Thursday Council</title>
     <script>
-        function updateClock() {
-            var now = new Date();
-            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-            var month = months[now.getMonth()];
-            var year = now.getFullYear();
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            var seconds = now.getSeconds();
-            var milliseconds = now.getMilliseconds();
-            var ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12;
-            hours = hours ? hours : 12;
-            minutes = minutes < 10 ? '0' + minutes : minutes;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-            milliseconds = milliseconds < 100 ? (milliseconds < 10 ? '00' + milliseconds : '0' + milliseconds) : milliseconds;
-            document.getElementById('date').innerText = "Thursday, " + month + " " + now.getDate() + ", " + year;
-            document.getElementById('time').innerText = hours + ":" + minutes + ':' + seconds + '.' + milliseconds + ' ' + ampm;
-        }
-        setInterval(updateClock, 1); // Update every millisecond
-
         function navigateTo(page) {
             switch (page) {
                 case "home":
@@ -34,8 +14,8 @@
                 case "about":
                     window.location.href = "about.html";
                     break;
-                case "faq":
-                    window.location.href = "faq.html";
+                case "contact":
+                    window.location.href = "contact.html";
                     break;
                 case "join-us":
                     window.location.href = "join.html";
@@ -92,35 +72,6 @@
         .header h1, .header h2, .header h3 {
             text-align: center;
         }
-        #date, #time {
-            font-family: "Courier New", Courier, monospace;
-        }
-
-        .current-day {
-            position: relative;
-            text-align: center;
-            color: #000;
-        }
-        
-        .current-day::after {
-            content: "";
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ffb0f3; /* Change this to your desired color */
-            border-radius: 50%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: -1; /* Place the circle behind the text */
-        }
-        
-        .calendar__header b {
-            visibility: hidden; /* Hide the content but maintain the space */
-            height: 20px; /* You can adjust this value as needed */
-        }
-
-         /* Hamburger Menu */
         *, *:before, *:after {
             box-sizing: border-box;
         }
@@ -321,7 +272,7 @@
         <ul class="menu-links" id="menu-links">
             <li onclick="navigateTo('home')">Home</li>
             <li onclick="navigateTo('about')">About</li>
-            <li onclick="navigateTo('faq')">FAQ</li>
+            <li onclick="navigateTo('Contact')">Contact</li>
             <li onclick="navigateTo('join-us')">Join Us</li>
             <li onclick="navigateTo('store')">Store</li>
         </ul>
