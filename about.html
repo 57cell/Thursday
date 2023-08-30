@@ -32,6 +32,7 @@
         function toggleMenuLinks(isContainerClick = false) {
             var menuLinks = document.getElementById('menu-links');
             var toggle = document.getElementById('menu-toggle');
+            var menuContainer = document.querySelector('.menu-container');
             
             if (isContainerClick) {
                 toggle.checked = !toggle.checked;
@@ -39,17 +40,19 @@
         
             if (toggle.checked) {
                 menuLinks.style.display = 'block';
+                menuContainer.style.pointerEvents = 'auto';  // enable pointer events
                 setTimeout(function() {
                     menuLinks.style.opacity = '1';
                 }, 0);
             } else {
                 menuLinks.style.opacity = '0';
+                menuContainer.style.pointerEvents = 'none';  // disable pointer events
                 setTimeout(function() {
                     menuLinks.style.display = 'none';
                 }, 500);
             }
         }
-        
+
         function toggleMenuByContainerClick(event) {
             var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
             if (width <= 768 && event.target.id === "main-container") {
@@ -191,6 +194,49 @@
             justify-content: center;
             align-items: center;
          }
+        .faq-section {
+          text-align: center;
+          margin: 50px 0;
+        }
+        
+        .faq-section h2 {
+          font-size: 28px;
+          margin-bottom: 20px;
+        }
+        
+        .faq-item {
+          margin: 10px 0;
+          text-align: left;
+        }
+        
+        .faq-item input[type="checkbox"] {
+          display: none;
+        }
+        
+        .faq-item label {
+          display: block;
+          background: #1b1b1b;
+          color: #fff;
+          padding: 10px;
+          font-size: 18px;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+        
+        .faq-item label:hover {
+          background: #333;
+        }
+        
+        .faq-content {
+          max-height: 0;
+          overflow: hidden;
+          background: #fff;
+          transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-item input[type="checkbox"]:checked + label + .faq-content {
+          max-height: 200px;
+        }
         @media screen and (max-width: 768px) {
           label .menu {
             background: #ffb0f3;
@@ -276,6 +322,23 @@
             <li onclick="navigateTo('join-us')">Join Us</li>
             <li onclick="navigateTo('store')">Store</li>
         </ul>
+    </div>
+        <div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <input type="checkbox" id="q1">
+        <label for="q1">What is the Thursday Council?</label>
+        <div class="faq-content">
+          <p>The Thursday Council is an organization focused on a new understanding of weekdays, aiming to replace the traditional seven days with varying types of Thursdays.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <input type="checkbox" id="q2">
+        <label for="q2">How do I join?</label>
+        <div class="faq-content">
+          <p>To join, navigate to our 'Join Us' section.</p>
+        </div>
+      </div>
     </div>
     <script>
     </script>
