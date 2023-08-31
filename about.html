@@ -35,7 +35,6 @@
         function toggleMenuLinks(isContainerClick = false) {
             var menuLinks = document.getElementById('menu-links');
             var toggle = document.getElementById('menu-toggle');
-            var menuContainer = document.querySelector('.menu-container');
             
             if (isContainerClick) {
                 toggle.checked = !toggle.checked;
@@ -43,18 +42,19 @@
         
             if (toggle.checked) {
                 menuLinks.style.display = 'block';
-                menuContainer.style.pointerEvents = 'auto';  // enable pointer events
+                menuLinks.style.pointerEvents = 'auto';  // enable pointer events on menu links
                 setTimeout(function() {
                     menuLinks.style.opacity = '1';
                 }, 0);
             } else {
                 menuLinks.style.opacity = '0';
-                menuContainer.style.pointerEvents = 'none';  // disable pointer events
+                menuLinks.style.pointerEvents = 'none';  // disable pointer events on menu links
                 setTimeout(function() {
                     menuLinks.style.display = 'none';
                 }, 500);
             }
         }
+
 
         function toggleMenuByContainerClick(event) {
             var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -81,7 +81,9 @@
         *, *:before, *:after {
             box-sizing: border-box;
         }
-
+        label {
+            pointer-events: auto;
+        }
         label .menu {
             position: absolute;
             right: -100px;
@@ -162,6 +164,7 @@
             top: 0;
             left: 0;
             z-index: 98; /* Below the links */
+            pointer-events: none;
         }
         .menu-links {
             display: none;
