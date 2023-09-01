@@ -169,22 +169,26 @@
         .menu-links {
             display: none;
             position: fixed;
-            top: 30%;
-            left: 49%;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             list-style: none;
             text-align: center;
             opacity: 0;
-            transition: opacity 0.5s ease-in-out; /* Transition for fading effect */
-            z-index: 99; /* To make sure the links are above other elements but below the menu */
+            transition: opacity 0.5s ease-in-out;
+            z-index: 99;
+            margin: 0;
+            padding: 0;
         }
+        
         .menu-links li {
             font-size: 20px;
-            margin: 10px;
+            margin: 0;
+            padding: 10px;
             color: #fff;
             cursor: pointer;
+            display: inline-block;
         }
-
         .menu-links li:hover {
             color: #ffb0f3; /* Color when hovered over */
         }
