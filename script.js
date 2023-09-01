@@ -7,47 +7,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const today = new Date();
     const month = today.getMonth();
     const year = today.getFullYear();
-
-    // Start building the calendar
     let calendarBody = '';
-
-    // Get the first day of the month
     let firstDay = new Date(year, month, 1);
-
-    // Fill in the blank spaces before the first day
     for (let i = 0; i < firstDay.getDay(); i++) {
       calendarBody += '<td></td>';
     }
 
-    // Fill in the days of the month
     for (let i = 1; i <= 31; i++) {
       const dayDate = new Date(year, month, i);
-      if (dayDate.getMonth() !== month) break; // Handle months with less than 31 days
-
-      // Check if today
+      if (dayDate.getMonth() !== month) break;
       if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
         calendarBody += `<td id="day-${year}-${month + 1}-${i}" class="current-day">${i}</td>`;
       } else {
         calendarBody += `<td id="day-${year}-${month + 1}-${i}">${i}</td>`;
       }
-
-      // Check if the week is complete
       if (dayDate.getDay() === 6) {
         calendarBody += '</tr><tr>';
       }
     }
 
-    // Add the generated body to the calendar
     document.querySelector('.calendar tbody').innerHTML += `<tr>${calendarBody}</tr>`;
   }
-
-  // Execute the function to create the calendar
+  
   createCalendar();
-
-  // Get the current date
+  
   var today = new Date().getDate();
-
-  // Find the table cell that corresponds to today's date
   var calendarCells = document.querySelectorAll(".calendar td");
   calendarCells.forEach(function (cell) {
     if (parseInt(cell.innerText) === today) {
@@ -55,3 +39,80 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+
+function navigateTo(page) {
+    switch (page) {
+        case "home":
+            window.location.href = "/";
+            break;
+        case "about":
+            window.location.href = "about.html";
+            break;
+        case "contact":
+            window.location.href = "contact.html";
+            break;
+        case "join-us":
+            window.location.href = "join.html";
+            break;
+        case "store":
+            window.location.href = "store.html";
+            break;
+        default:
+            break;
+    }
+}
+
+function toggleMenuLinks(isContainerClick = false) {
+    var menuLinks = document.getElementById('menu-links');
+    var toggle = document.getElementById('menu-toggle');
+    
+    if (isContainerClick) {
+        toggle.checked = !toggle.checked;
+    }
+
+    if (toggle.checked) {
+        menuLinks.style.display = 'block';
+        menuLinks.style.pointerEvents = 'auto';
+        setTimeout(function() {
+            menuLinks.style.opacity = '1';
+        }, 0);
+    } else {
+        menuLinks.style.opacity = '0';
+        menuLinks.style.pointerEvents = 'none';
+        setTimeout(function() {
+            menuLinks.style.display = 'none';
+        }, 500);
+    }
+}
+
+function toggleMenuByContainerClick(event) {
+    var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    if (width <= 768 && event.target.id === "main-container") {
+        toggleMenuLinks(true);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("main-container").addEventListener("click", toggleMenuByContainerClick);
+    document.getElementById("main-container").addEventListener("touchstart", toggleMenuByContainerClick);
+});
+
+function updateClock() {
+    var now = new Date();
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    var month = months[now.getMonth()];
+    var year = now.getFullYear();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var milliseconds = now.getMilliseconds();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    milliseconds = milliseconds < 100 ? (milliseconds < 10 ? '00' + milliseconds : '0' + milliseconds) : milliseconds;
+    document.getElementById('date').innerText = "Thursday, " + month + " " + now.getDate() + ", " + year;
+    document.getElementById('time').innerText = hours + ":" + minutes + ':' + seconds + '.' + milliseconds + ' ' + ampm;
+}
+setInterval(updateClock, 1); // Update every millisecond
