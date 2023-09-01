@@ -22,12 +22,27 @@
                 <p>@TheThursdayCouncil</p>
             </div>
             <div class="contact-item">
-                <p>Join our Discord server <a href="https://thursdaycouncil.org/discord.html">here</a>!</p>
+                <p>Join our Discord server <a href="https://thursdaycouncil.org/discord/">here</a>!</p>
             </div>
             <div class="contact-item">
                 <p>For direct support from executive members of the Thursday Council, email cardinal@thursdaycouncil.org</p>
             </div>
         </div>
+    </div>
+    <div class="menu-container">
+        <label>
+            <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
+            <div class="menu">
+                <span class="hamburger"></span>
+            </div>
+        </label>
+        <ul class="menu-links" id="menu-links">
+            <li onclick="navigateTo('home')">Home</li>
+            <li onclick="navigateTo('about')">About</li>
+            <li onclick="navigateTo('contact')">Contact</li>
+            <li onclick="navigateTo('join-us')">Join Us</li>
+            <li onclick="navigateTo('store')">Store</li>
+        </ul>
     </div>
 </body>
 </html>
