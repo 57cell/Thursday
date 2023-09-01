@@ -46,16 +46,16 @@ function navigateTo(page) {
             window.location.href = "/";
             break;
         case "about":
-            window.location.href = "about.html";
+            window.location.href = "/about/";
             break;
         case "contact":
-            window.location.href = "contact.html";
+            window.location.href = "/contact/";
             break;
         case "join-us":
-            window.location.href = "join.html";
+            window.location.href = "/join/";
             break;
         case "store":
-            window.location.href = "store.html";
+            window.location.href = "/store/";
             break;
         default:
             break;
