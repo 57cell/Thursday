@@ -7,113 +7,55 @@
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js"></script>
     <title>The Dogma</title>
-    <style>
-        .fundamental-wrapper {
-            background: rgb(248, 249, 250);
-        }
-        
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-        }
-        
-        .sixteen.columns {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
-        .satanic-logo-sec {
-            text-align: center;
-        }
-        
-        .title-size-32 {
-            font-size: 32px;
-        }
-        
-        .title-size-45 {
-            font-size: 45px;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        
-        ul.f-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        
-        ul.f-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        
-        .count-number {
-            font-weight: bold;
-            margin-right: 10px;
-            display: inline-block;
-            width: 40px;
-            text-align: center;
-        }
-        
-        .eight.columns {
-            width: 50%;
-        }
-    </style>
 </head>
-
 <body>
-
-    <div class="fundamental-wrapper">
+    <div class="menu-container">
+        <label>
+            <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
+            <div class="menu">
+                <span class="hamburger"></span>
+            </div>
+        </label>
+        <ul class="menu-links" id="menu-links">
+            <li onclick="navigateTo('home')">Home</li>
+            <li onclick="navigateTo('about')">About</li>
+            <li onclick="navigateTo('contact')">Contact</li>
+            <li onclick="navigateTo('join-us')">Join Us</li>
+            <li onclick="navigateTo('store')">Store</li>
+        </ul>
+    </div>
+    <div class="dogma-wrapper">
         <div class="container">
             <div class="sixteen columns">
                 <div class="satanic-logo-sec">
-                    <div class="title-size-32">There are Seven</div>
-                    <div class="stanic-mid-title title-size-45">FUNDAMENTAL TENETS</div>
+                    <div class="title-size-32">The Five</div>
+                    <div class="stanic-mid-title title-size-45">FUNDAMENTAL DOCTRINES</div>
                 </div>
             </div>
-            <div class="eight columns">
-                <ul class="f-list lt-f-list">
-                    <li>
-                        <span class="count-number">I</span>
-                        <p>One should strive to act with compassion and empathy toward all creatures in accordance with reason.</p>
-                    </li>
-                    <li>
-                        <span class="count-number">II</span>
-                        <p>The struggle for justice is an ongoing and necessary pursuit that should prevail over laws and institutions.</p>
-                    </li>
-                    <li>
-                        <span class="count-number">III</span>
-                        <p>One’s body is inviolable, subject to one’s own will alone.</p>
-                    </li>
-                    <li>
-                        <span class="count-number">IV</span>
-                        <p>The freedoms of others should be respected, including the freedom to offend. To willfully and unjustly encroach upon the freedoms of another is to forgo one's own.</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="eight columns">
-                <ul class="f-list rt-f-list">
-                    <li>
-                        <span class="count-number">V</span>
-                        <p>Beliefs should conform
-            </li>
-              
-            <li>
-              
-              <span class="count-number">VII</span>
-              <p></p><p>Every tenet is a guiding principle designed to inspire nobility in action and thought. The spirit of compassion, wisdom, and justice should always prevail over the written or spoken word.</p><p></p>
-            </li>
-              
-            <li>
-              
-              <span class="count-number"></span>
-              <p></p>
-            </li>
-              
+        </div>
+        <div class="eight columns">
+            <ul class="f-list lt-f-list">
+                <li>
+                    <span class="count-number">I</span>
+                    <p>Happiness is inviolable. While one shall never be expected to be perpetually happy, they should strive to act with compassion, empathy, and to interact with others peacefully, constructively, and in an ultimately uplifting manner. While not all Thursdays are happy, it should always be an overarching aspiration to bring joy and humor to others; for to disrupt or hinder one’s pursuit of happiness is to be in violation of the fundamental Thursdarian philosophies.</p>
+                </li>
+                <li>
+                    <span class="count-number">II</span>
+                    <p>The race for justice is endless and glorious. As our society grows progressively more politically, economically, and socially polarized, it has become nothing short of necessity to radicalize one’s beliefs to aspire for and achieve a world in which all are truly equal. The ultimate goal is a society where peoples’ freedoms are both never encroached upon, and a lack thereof is never imposed on others. And as people are fallible, we must strive for a community where all are fully forgiven of misdoings when wrongship is both mutually acknowledged and entirely rectified.</p>
+                </li>
+                <li>
+                    <span class="count-number">III</span>
+                    <p>Indiscriminate acceptance is the basis of virtue. The Thursday Council must judge solely on controllable character, not intrinsic traits. All people, regardless of race, gender, religion, or any and all other factors of oneself, deserve utmost respect and shall never be discriminated against unless they fall victim to violation of the Thursdarian Dogma. Even in such a case, all are redeemable, per the Second Doctrine.</p>
+                </li>
+                <li>
+                    <span class="count-number">IV</span>
+                    <p>Excess ego is the root of malevolence, but self deprecation demands returning self love. While hubris and arrogance is a corrupter of persons and vile actor in society, appreciation of oneself is as important as of others. Sincere hatred of oneself requires immediate remedying, for none are beneath the importance of good health.</p>
+                </li>
+                <li>
+                    <span class="count-number">V</span>
+                    <p>The philosophies of the Thursday Council are among the highest priorities of all active members. Blatant disregard, contempt, and unjustified criticism of the founding principles of the Council are akin to disrespect for our ways. While not immediately deserving of disassociation, all violations of this Doctrine must be followed up with adequate reasoning, in which case the Council shall discuss said rejection.</p>
+                </li>
             </ul>
         </div>
-      
-  </div>
-</div>
+    </div>
+</body>
