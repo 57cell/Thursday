@@ -7,6 +7,32 @@
     <script type="text/javascript" src="/script.js"></script>
     <title>The Thursday Council</title>
 </head>
+<style>
+    .contact-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .contact-container a {
+        width: 30%;
+        transition: transform 0.2s;
+    }
+    
+    .contact-container a:hover {
+        transform: scale(1.05);
+    }
+    
+    .contact-container img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+</style>
 <body>
     <div class="container">
         <nav class="navbar">
@@ -16,15 +42,10 @@
             <h1>Contact</h1>
         </header>
         <p>There are various ways to reach out to fellow members of the Thursday Council:</p>
-
-        <div class="contact-methods">
-            <div class="contact-item">
-                <p>Join our Discord server <a href="https://thursdaycouncil.org/discord/">here</a>!</p>
-            </div>
-            <div class="contact-item">
-                <p>For direct support from executive members of the Thursday Council, email cardinal@thursdaycouncil.org</p>
-            </div>
-        </div>
+    <div class="contact-container">
+        <a href="mailto:cardinal@thursdaycouncil.org" target="_blank"><img src="https://files.catbox.moe/juvmy9.png" alt="mail"></a>
+        <a href="https://discord.gg/AHvWrbzmcM" target="_blank"><img src="https://files.catbox.moe/3ruwan.png" alt="discord"></a>
+        <a href="https://instagram.com/the_thursday_council?igshid=MzMyNGUyNmU2YQ==" target="_blank"><img src="https://files.catbox.moe/gy232b.png" alt="instagram"></a>
     </div>
     <div class="menu-container">
         <label>
