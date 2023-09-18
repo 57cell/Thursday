@@ -18,8 +18,8 @@
     }
     
     .contact-container a {
-        width: 20%;
-        padding: 0 1%;
+        width: 30%;
+        padding: 0 6%;
         transition: transform 0.2s;
     }
     
@@ -31,6 +31,15 @@
         width: 100%;
         object-fit: cover;
         border-radius: 5px;
+    }
+    @media (max-width: 768px) {
+        .contact-container {
+            flex-direction: column; /* Stack items vertically */
+        }
+        .contact-container a {
+            width: 60%; /* Adjust as per your preference */
+            margin: 10px auto; /* Center the icons and provide spacing */
+        }
     }
 </style>
 <body>
