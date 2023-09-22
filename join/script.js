@@ -62,3 +62,20 @@ function sendEncryptedDataToJSONBin(encryptedData) {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("dataForm");
+    const submitButton = form.querySelector('input[type="submit"]');
+
+    // Check if the form was previously submitted
+    if (localStorage.getItem('formSubmitted')) {
+        // Disable the submit button if the form was previously submitted
+        submitButton.disabled = true;
+        submitButton.value = "Already Submitted";
+    }
+
+    form.addEventListener('submit', function(e) {
+        // Store a value in localStorage when form is submitted
+        localStorage.setItem('formSubmitted', 'true');
+    });
+});
