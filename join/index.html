@@ -98,20 +98,22 @@
 
         <input type="submit" value="Submit">
     </form>
-    <div class="menu-container">
-        <label>
-            <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
-            <div class="menu">
-                <span class="hamburger"></span>
-            </div>
-        </label>
-        <ul class="menu-links" id="menu-links">
-            <li onclick="navigateTo('home')">Home</li>
-            <li onclick="navigateTo('about')">About</li>
-            <li onclick="navigateTo('contact')">Contact</li>
-            <li onclick="navigateTo('join-us')">Join Us</li>
-            <li onclick="navigateTo('store')">Store</li>
-        </ul>
+    <div class="container" id="main-container">
+        <div class="menu-container">
+            <label>
+                <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
+                <div class="menu">
+                    <span class="hamburger"></span>
+                </div>
+            </label>
+            <ul class="menu-links" id="menu-links">
+                <li onclick="navigateTo('home')">Home</li>
+                <li onclick="navigateTo('about')">About</li>
+                <li onclick="navigateTo('contact')">Contact</li>
+                <li onclick="navigateTo('join-us')">Join Us</li>
+                <li onclick="navigateTo('store')">Store</li>
+            </ul>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openpgp/4.10.10/openpgp.min.js" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
