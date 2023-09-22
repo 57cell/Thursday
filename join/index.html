@@ -8,7 +8,12 @@
     <title>Membership Form</title>
 </head>
 <body>
-
+    <nav class="navbar">
+        <div class="logo">The Thursday Council</div>
+    </nav>
+    <header class="header">
+        <h1>Join the Council</h1>
+    </header>
     <form id="dataForm">
         <label for="name">Preferred Name:</label>
         <input type="text" id="name" name="name" required>
@@ -21,8 +26,22 @@
         
         <input type="submit" value="Submit">
     </form>
+    <div class="menu-container">
+        <label>
+            <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
+            <div class="menu">
+                <span class="hamburger"></span>
+            </div>
+        </label>
+        <ul class="menu-links" id="menu-links">
+            <li onclick="navigateTo('home')">Home</li>
+            <li onclick="navigateTo('about')">About</li>
+            <li onclick="navigateTo('contact')">Contact</li>
+            <li onclick="navigateTo('join-us')">Join Us</li>
+            <li onclick="navigateTo('store')">Store</li>
+        </ul>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openpgp/4.10.10/openpgp.min.js" referrerpolicy="no-referrer"></script>
     <script src="script.js"></script>
-
 </body>
 </html>
