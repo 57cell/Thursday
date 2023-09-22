@@ -328,3 +328,10 @@ label input:checked + .menu .hamburger:before {
     visibility: hidden; /* Hide the content but maintain the space */
     height: 20px; /* You can adjust this value as needed */
 }
+a {
+    color: #B0FFBC;
+}
+
+a:visited {
+    color: #90db9e; /* This is a slightly darker shade of #B0FFBC */
+}
