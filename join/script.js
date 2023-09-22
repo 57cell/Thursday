@@ -7,25 +7,21 @@ document.addEventListener("DOMContentLoaded", function() {
         submitButton.value = "You've already joined the Council!";
         submitButton.classList.add('already-submitted');
     } else {
-        submitButton.addEventListener('click', function() {
-            this.disabled = true;
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent the form from submitting normally
+            submitButton.disabled = true;  // Disable the button here
+
+            if (!localStorage.getItem('formSubmitted')) {
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value
+                };
+
+                const encryptedData = await encryptData(formData);
+                sendEncryptedDataToJSONBin(encryptedData);
+            }
         });
     }
-
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        if (!localStorage.getItem('formSubmitted')) {
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value
-            };
-
-            const encryptedData = await encryptData(formData);
-
-            sendEncryptedDataToJSONBin(encryptedData);
-        }
-    });
 });
 
 const JSONBIN_API_KEY = '$2a$10$S5kvh/Lik3W4JvpaCHg8s./yZ6ACCUOObXG51TKl3A8.2KSm6y13e';
@@ -66,7 +62,7 @@ function sendEncryptedDataToJSONBin(encryptedData) {
             'Content-Type': 'application/json',
             'X-Access-Key': JSONBIN_API_KEY,
             'X-Bin-Name': 'Form Response',
-            'X-Bin-Private': true
+            'X-Bin-Private': true  // Setting the bin as private, adjust if required
         }
     })
     .then(response => response.json())
