@@ -4,15 +4,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (localStorage.getItem('formSubmitted')) {
         submitButton.disabled = true;
-        submitButton.value = "You've already join the Council!";
+        submitButton.value = "You've already joined the Council!";
         submitButton.classList.add('already-submitted');
+    } else {
+        submitButton.addEventListener('click', function() {
+            this.disabled = true;
+        });
     }
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent the form from submitting normally
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
         if (!localStorage.getItem('formSubmitted')) {
-            localStorage.setItem('formSubmitted', 'true');
-            location.reload();
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value
+            };
+
+            const encryptedData = await encryptData(formData);
+
+            sendEncryptedDataToJSONBin(encryptedData);
         }
     });
 });
@@ -32,20 +43,6 @@ AQDvTFD6mW43noMzZ9bXZR7JDA6U27+brgUxf+kf4mvpVQEA0O5izNw+ZN9/
 7Ms8gUUdc0HNNWOAf2OAMemiwGLkCwM=
 =2O+V
 -----END PGP PUBLIC KEY BLOCK-----`;
-
-document.getElementById('dataForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    // Form data extraction
-    const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value
-    };
-
-    const encryptedData = await encryptData(formData);
-
-    sendEncryptedDataToJSONBin(encryptedData);
-});
 
 async function encryptData(data) {
     const { keys: [publicKey] } = await openpgp.key.readArmored(PUBLIC_KEY);
@@ -69,11 +66,13 @@ function sendEncryptedDataToJSONBin(encryptedData) {
             'Content-Type': 'application/json',
             'X-Access-Key': JSONBIN_API_KEY,
             'X-Bin-Name': 'Form Response',
-            'X-Bin-Private': true  // Setting the bin as private, adjust if required
+            'X-Bin-Private': true
         }
     })
     .then(response => response.json())
     .then(data => {
-            alert('Thank you! Welcome to the Thursday Council!');
+        alert('Thank you! Welcome to the Thursday Council!');
+        localStorage.setItem('formSubmitted', 'true');
+        location.reload();
     });
 }
