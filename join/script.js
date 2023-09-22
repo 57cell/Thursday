@@ -5,10 +5,15 @@ document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem('formSubmitted')) {
         submitButton.disabled = true;
         submitButton.value = "You've already join the Council!";
+        submitButton.classList.add('already-submitted');
     }
 
     form.addEventListener('submit', function(e) {
-        localStorage.setItem('formSubmitted', 'true');
+        e.preventDefault(); // Prevent the form from submitting normally
+        if (!localStorage.getItem('formSubmitted')) {
+            localStorage.setItem('formSubmitted', 'true');
+            location.reload();
+        }
     });
 });
 
