@@ -12,7 +12,7 @@ AmUM3QYCGwwAIQkQD8NJ9qAokSoWIQSuAvPI9nCn7kXK+k8Pw0n2oCiRKkUf
 AQDvTFD6mW43noMzZ9bXZR7JDA6U27+brgUxf+kf4mvpVQEA0O5izNw+ZN9/
 7Ms8gUUdc0HNNWOAf2OAMemiwGLkCwM=
 =2O+V
------END PGP PUBLIC KEY BLOCK-----;
+-----END PGP PUBLIC KEY BLOCK-----`;
 
 document.getElementById('dataForm').addEventListener('submit', async function (e) {
     e.preventDefault();
