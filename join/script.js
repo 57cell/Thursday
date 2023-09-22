@@ -17,6 +17,7 @@ AQDvTFD6mW43noMzZ9bXZR7JDA6U27+brgUxf+kf4mvpVQEA0O5izNw+ZN9/
 document.getElementById('dataForm').addEventListener('submit', async function (e) {
     e.preventDefault();
 
+    // Form data extraction
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value
@@ -30,6 +31,7 @@ document.getElementById('dataForm').addEventListener('submit', async function (e
 async function encryptData(data) {
     const { keys: [publicKey] } = await openpgp.key.readArmored(PUBLIC_KEY);
 
+    // Encrypting the JSON data
     const { data: encrypted } = await openpgp.encrypt({
         message: openpgp.message.fromText(JSON.stringify(data)),
         publicKeys: [publicKey]
@@ -48,7 +50,7 @@ function sendEncryptedDataToJSONBin(encryptedData) {
             'Content-Type': 'application/json',
             'X-Access-Key': JSONBIN_API_KEY,
             'X-Bin-Name': 'Form Response',
-            'X-Bin-Private': true  // Setting the bin as public, adjust as required
+            'X-Bin-Private': true  // Setting the bin as private, adjust if required
         }
     })
     .then(response => response.json())
