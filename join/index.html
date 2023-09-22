@@ -9,13 +9,13 @@
 </head>
 <style>
     form#dataForm {
-    width: 80%;
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: #1b1b1b;
+        width: 80%;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #1b1b1b;
     }
     
     form#dataForm label {
@@ -68,7 +68,16 @@
     form#dataForm input[type="checkbox"] {
         vertical-align: middle;
     }
-
+    
+    form#dataForm input[type="submit"].already-submitted {
+        background-color: gray;
+        cursor: not-allowed;
+        color: #1b1b1b;
+    }
+    
+    form#dataForm input[type="submit"].already-submitted:hover {
+        cursor: not-allowed;
+    }
 </style>
 <body>
     <nav class="navbar">
