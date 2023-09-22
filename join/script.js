@@ -1,3 +1,17 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById("dataForm");
+    const submitButton = form.querySelector('input[type="submit"]');
+
+    if (localStorage.getItem('formSubmitted')) {
+        submitButton.disabled = true;
+        submitButton.value = "You've already join the Council!";
+    }
+
+    form.addEventListener('submit', function(e) {
+        localStorage.setItem('formSubmitted', 'true');
+    });
+});
+
 const JSONBIN_API_KEY = '$2a$10$S5kvh/Lik3W4JvpaCHg8s./yZ6ACCUOObXG51TKl3A8.2KSm6y13e';
 const PUBLIC_KEY = `-----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -55,27 +69,6 @@ function sendEncryptedDataToJSONBin(encryptedData) {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {
-            alert('Data sent successfully!');
-        } else {
-            alert('Error sending data!');
-        }
+            alert('Thank you! Welcome to the Thursday Council!');
     });
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("dataForm");
-    const submitButton = form.querySelector('input[type="submit"]');
-
-    // Check if the form was previously submitted
-    if (localStorage.getItem('formSubmitted')) {
-        // Disable the submit button if the form was previously submitted
-        submitButton.disabled = true;
-        submitButton.value = "Already Submitted";
-    }
-
-    form.addEventListener('submit', function(e) {
-        // Store a value in localStorage when form is submitted
-        localStorage.setItem('formSubmitted', 'true');
-    });
-});
