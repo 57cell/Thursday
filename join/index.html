@@ -36,7 +36,6 @@
         font-size: 1rem;
     }
     
-    /* Color styling based on accent color */
     form#dataForm input[type="text"],
     form#dataForm input[type="email"] {
         border: 2px solid #ffb0f3;
@@ -44,7 +43,7 @@
     
     form#dataForm input[type="text"]:focus,
     form#dataForm input[type="email"]:focus {
-        border-color: #ff5fc6; /* A darker shade of the primary accent */
+        border-color: #ff5fc6;
         outline: none;
         box-shadow: 0 0 10px #ff5fc6;
     }
@@ -57,18 +56,20 @@
     }
     
     form#dataForm input[type="submit"]:hover {
-        background-color: #ff5fc6; /* A darker shade of the primary accent */
+        background-color: #ff5fc6;
+    }
+    
+    form#dataForm label[for="checkbox"] {
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 0.5rem;
     }
     
     form#dataForm input[type="checkbox"] {
-        margin-right: 0.5rem;
+        vertical-align: middle;
     }
-    
-    /* Checkbox label styling */
-    form#dataForm label[for="checkbox"] {
-        display: flex;
-        align-items: center;
-    }
+
 </style>
 <body>
     <nav class="navbar">
