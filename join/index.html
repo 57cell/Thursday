@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <link rel="stylesheet" href="/style.css">
+    <script type="text/javascript" src="/script.js"></script>
+    <title>Membership Form</title>
 </head>
 <body>
 
-<form id="dataForm">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    
-    <input type="submit" value="Submit">
-</form>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/openpgp/4.10.10/openpgp.min.js" referrerpolicy="no-referrer"></script>
-<script src="script.js"></script>
+    <form id="dataForm">
+        <label for="name">Preferred Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="checkbox">I have read the Thursday Council Dogma and agree to adhere to it to the best of my ability.</label>
+        <input type="checkbox" id="checkbox" name="checkbox" required>
+        
+        <input type="submit" value="Submit">
+    </form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/openpgp/4.10.10/openpgp.min.js" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
