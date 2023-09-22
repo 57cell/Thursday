@@ -32,6 +32,48 @@
         object-fit: cover;
         border-radius: 5px;
     }
+        .service {
+        width: 30%;
+        padding: 0 6%;
+        position: relative;
+        cursor: pointer;
+    }
+    
+    .service img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: transform 0.2s;
+    }
+    
+    .service img:hover {
+        transform: scale(1.05);
+    }
+    
+    .service-description {
+        display: none;
+        background-color: #eee; 
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    
+    .service-button {
+        display: block;
+        margin-top: 10px;
+        padding: 8px 12px;
+        background-color: #1b1b1b;
+        color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+    }
+    
+    .service-button:hover {
+        background-color: #333;
+    }
+
     @media (max-width: 768px) {
         .contact-container {
             flex-direction: column; /* Stack items vertically */
@@ -43,17 +85,28 @@
     }
 </style>
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <div class="logo">The Thursday Council</div>
-        </nav>
-        <header class="header">
-            <h1>Contact</h1>
-        </header>
     <div class="contact-container">
-        <a href="mailto:cardinal@thursdaycouncil.org" target="_blank"><img src="https://files.catbox.moe/039kik.png" alt="mail"></a>
-        <a href="https://discord.gg/AHvWrbzmcM" target="_blank"><img src="https://files.catbox.moe/nibs7f.png" alt="discord"></a>
-        <a href="https://instagram.com/the_thursday_council?igshid=MzMyNGUyNmU2YQ==" target="_blank"><img src="https://files.catbox.moe/v45djr.png" alt="instagram"></a>
+        <div class="service" onclick="toggleDescription('mailDesc')">
+            <img src="https://files.catbox.moe/039kik.png" alt="mail">
+            <div class="service-description" id="mailDesc">
+                This is the email contact for The Thursday Council. Feel free to send us a message!
+                <a href="mailto:cardinal@thursdaycouncil.org" target="_blank" class="service-button">Send Email</a>
+            </div>
+        </div>
+        <div class="service" onclick="toggleDescription('discordDesc')">
+            <img src="https://files.catbox.moe/nibs7f.png" alt="discord">
+            <div class="service-description" id="discordDesc">
+                Join our discord community to engage with members of The Thursday Council.
+                <a href="https://discord.gg/AHvWrbzmcM" target="_blank" class="service-button">Join Discord</a>
+            </div>
+        </div>
+        <div class="service" onclick="toggleDescription('instagramDesc')">
+            <img src="https://files.catbox.moe/v45djr.png" alt="instagram">
+            <div class="service-description" id="instagramDesc">
+                Follow us on Instagram to stay updated with the latest news from The Thursday Council.
+                <a href="https://instagram.com/the_thursday_council?igshid=MzMyNGUyNmU2YQ==" target="_blank" class="service-button">Visit Instagram</a>
+            </div>
+        </div>
     </div>
     <div class="menu-container">
         <label>
