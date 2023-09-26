@@ -23,10 +23,17 @@
     flex: 0 0 100px;
     height: 100px;
     background-color: #444;
-    border-radius: 50%;
+    border-radius: 8px;
     margin-right: 20px;
   }
   
+  .publication-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
   .publication-content {
     flex: 1;
   }
@@ -75,7 +82,7 @@
     <main>
       <article class="publication" onclick="window.location.href='open-letter'">
         <div class="publication-image">
-          <img src="https://files.catbox.moe/4ojvp7.png">
+          <img src="https://files.catbox.moe/4ojvp7.png" alt="thomas"> 
         </div>
         <div class="publication-content">
           <h2>An Open Letter to the Frederick Lantern</h2>
