@@ -6,6 +6,35 @@
   <link rel="stylesheet" href="/style.css">
   <script type="text/javascript" src="/script.js"></script>
 </head>
+<style>
+  .publication {
+    background-color: #282828;
+    color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .publication h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+  
+  .publication p {
+    margin: 10px 0;
+  }
+  
+  .publication .author {
+    font-style: italic;
+    color: #ccc;
+  }
+  
+  .publication:hover {
+    background-color: #333;
+  }
+</style>
 <body>
   <div class="container">
     <nav class="navbar">
@@ -33,6 +62,10 @@
       <article class="publication" onclick="window.location.href='open-letter'">
         <h2>An Open Letter to the Frederick Lantern</h2>
         <p class="info">Cardinal • 2023-09-26</p>
+      </article>
+      <article class="publication" onclick="window.location.href='thomas-mustard'">
+        <h2>THOMASTHOMASTHOMASTHOMAS</h2>
+        <p class="info">Thomas J. Mustard • 2023-09-26</p>
       </article>
     </main>
   </div>
