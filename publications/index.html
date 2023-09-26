@@ -6,9 +6,29 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Publications</h1>
-  </header>
+    <div class="container">
+      <nav class="navbar">
+          <div class="logo">The Thursday Council</div>
+      </nav>
+      <header class="header">
+          <h1>The Thursday Council Publications</h1>
+      </header>
+      <div class="menu-container">
+          <label>
+              <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
+              <div class="menu">
+                  <span class="hamburger"></span>
+              </div>
+          </label>
+          <ul class="menu-links" id="menu-links">
+              <li onclick="navigateTo('home')">Home</li>
+              <li onclick="navigateTo('about')">About</li>
+              <li onclick="navigateTo('contact')">Contact</li>
+              <li onclick="navigateTo('join-us')">Join Us</li>
+              <li onclick="navigateTo('store')">Store</li>
+          </ul>
+      </div>
+    </div>
   <main>
     <article class="publication" onclick="window.location.href='open-letter'">
       <h2>An Open Letter to the Frederick Lantern</h2>
