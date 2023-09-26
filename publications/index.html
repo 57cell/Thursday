@@ -8,6 +8,8 @@
 </head>
 <style>
   .publication {
+    display: flex;
+    align-items: flex-start;
     background-color: #282828;
     color: #fff;
     padding: 20px;
@@ -15,6 +17,18 @@
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.3s ease;
+  }
+  
+  .publication-image {
+    flex: 0 0 100px;
+    height: 100px;
+    background-color: #444;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .publication-content {
+    flex: 1;
   }
   
   .publication h2 {
@@ -41,7 +55,7 @@
       <div class="logo">The Thursday Council</div>
     </nav>
     <header class="header">
-      <h1>The Thursday Council Publications</h1>
+      <h1>Council Publications</h1>
     </header>
     <div class="menu-container">
       <label>
@@ -60,13 +74,25 @@
     </div>
     <main>
       <article class="publication" onclick="window.location.href='open-letter'">
-        <h2>An Open Letter to the Frederick Lantern</h2>
-        <p class="info">Cardinal • 2023-09-26</p>
+        <div class="publication-image">
+          <img src="https://files.catbox.moe/4ojvp7.png">
+        </div>
+        <div class="publication-content">
+          <h2>An Open Letter to the Frederick Lantern</h2>
+          <p class="info">Cardinal • 2023-09-26</p>
+        </div>
       </article>
+
       <article class="publication" onclick="window.location.href='thomas-mustard'">
-        <h2>THOMASTHOMASTHOMASTHOMAS</h2>
-        <p class="info">Thomas J. Mustard • 2023-09-26</p>
+        <div class="publication-image">
+          <!-- image here -->
+        </div>
+        <div class="publication-content">
+          <h2>THOMASTHOMASTHOMAS</h2>
+          <p class="info">Thomas J. Mustard • 2023-09-26</p>
+        </div>
       </article>
+
     </main>
   </div>
 </body>
