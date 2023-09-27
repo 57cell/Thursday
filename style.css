@@ -335,3 +335,10 @@ a {
 a:visited {
     color: #90db9e; /* This is a slightly darker shade of #B0FFBC */
 }
+
+blockquote {
+    border-left: 3px solid #B0FFBC; /* Adjust the color as desired */
+    padding-left: 15px;             /* Spacing between the line and the text */
+    margin-left: 3;                 /* Ensure blockquote is flush with its container on the left */
+    font-style: italic;             /* Commonly, blockquotes are styled in italics, but this is optional */
+}
