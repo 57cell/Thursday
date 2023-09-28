@@ -57,6 +57,9 @@ function navigateTo(page) {
         case "store":
             window.location.href = "/store/";
             break;
+        case "publications":
+            window.location.href = "/publications/";
+            break;
         default:
             break;
     }
