@@ -98,11 +98,85 @@
         box-shadow: 0 0 0 100vw #ffb0f3, 0 0 0 100vh #ffb0f3;
       }
     }
+    /* Navbar Styles */
+    .navbar {
+        background-color: #1A2A48; /* Dark Blue Background */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 5%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar .menu {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .navbar .menu-icon {
+        font-size: 24px;
+        color: #FFF;
+        cursor: pointer;
+        display: none; /* Initially set to not display, can be toggled with JavaScript */
+    }
+    
+    .navbar .menu-item {
+        font-size: 14px;
+        color: #FFF;
+        margin: 0 15px;
+        cursor: pointer;
+        text-transform: uppercase;
+        position: relative;
+    }
+    
+    .navbar .menu-item::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #FFD700;
+        transition: width 0.3s;
+    }
+    
+    .navbar .menu-item:hover::after {
+        width: 100%;
+    }
+    
+    .navbar .logo {
+        font-size: 24px;
+        color: #FFD700; /* Golden color for the text */
+        font-weight: bold;
+    }
+    
+    .navbar .search-icon {
+        font-size: 20px;
+        color: #FFF;
+        cursor: pointer;
+    }
 
   </style>
 </head>
 <body>
   <div class="container">
+    <div class="navbar">
+      <div class="menu">
+          <span class="menu-icon">☰</span>
+          <span class="menu-item">News</span>
+          <span class="menu-item">Sports</span>
+          <span class="menu-item">Arts</span>
+          <span class="menu-item">Student Life</span>
+          <span class="menu-item">Reviews</span>
+          <span class="menu-item">En Español</span>
+          <span class="menu-item">Lit Magazine</span>
+      </div>
+      <div class="logo">The Frederick Lantern</div>
+      <div class="menu-icons">
+          <span class="search-icon">🔍</span>
+      </div>
+    </div>
     <img src="https://files.catbox.moe/0kiwqv.png" class="headerimage" alt="The REAL News Site of Frederick High School">
     <div class="menu-container">
       <label>
