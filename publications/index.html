@@ -99,14 +99,6 @@
       }
     }
     /* Navbar Styles */
-    .navbar {
-        background-color: #1A2A48; /* Dark Blue Background */
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 5%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-    }
     
     .navbar .menu {
         display: flex;
@@ -118,15 +110,15 @@
         font-size: 24px;
         color: #FFF;
         cursor: pointer;
-        display: none; /* Initially set to not display, can be toggled with JavaScript */
+        display: none;
     }
     
     .navbar .menu-item {
         font-size: 14px;
-        color: #FFF;
+        color: #1b1b1b;
         margin: 0 15px;
         cursor: pointer;
-        text-transform: uppercase;
+        text-transform: lowercase;
         position: relative;
     }
     
@@ -137,24 +129,12 @@
         left: 0;
         width: 0;
         height: 2px;
-        background-color: #FFD700;
+        background-color: #000;
         transition: width 0.3s;
     }
     
     .navbar .menu-item:hover::after {
         width: 100%;
-    }
-    
-    .navbar .logo {
-        font-size: 24px;
-        color: #FFD700; /* Golden color for the text */
-        font-weight: bold;
-    }
-    
-    .navbar .search-icon {
-        font-size: 20px;
-        color: #FFF;
-        cursor: pointer;
     }
 
   </style>
