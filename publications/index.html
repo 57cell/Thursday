@@ -131,9 +131,10 @@
   <nav class="navbar">
       <div class="logo">The Thursday Council</div>
       <div class="menu">
+        <span class="menu-item" onclick="filter('all')">all</span>
         <span class="menu-item" onclick="filter('political-extremism')">political extremism</span>
         <span class="menu-item" onclick="filter('shredded-cheese')">shredded cheese</span>
-        <span class="menu-item" onclick="filter('chair-design')">vapid poetry</span>
+        <span class="menu-item" onclick="filter('vapid-poetry')">vapid poetry</span>
         <span class="menu-item" onclick="filter('uninformed-social-commentary')">uninformed social commentary</span>
         <span class="menu-item" onclick="filter('misinformation')">misinformation</span>
         <span class="menu-item" onclick="filter('toki-pona')">toki pona</span>
@@ -159,13 +160,13 @@
       </ul>
     </div>
     <main>
-      <article class="publication" onclick="window.location.href='open-letter'">
+      <article class="publication" data-tags="shredded-cheese,vapid-poetry,uninformed-social-commentary"onclick="window.location.href='open-letter'">
         <div class="publication-image">
           <img src=""> 
         </div>
         <div class="publication-content">
           <h2>An Open Letter to the Frederick Lantern</h2>
-          <p class="info">Cardinal • Thursday, September 28, 2023</p>
+          <p class="info">Cardinal • Thursday, September 28, 2023</p><br><p class="info">tags: shredded cheese, vapid poetry, uninformed social commentry
         </div>
       </article>
     </main>
