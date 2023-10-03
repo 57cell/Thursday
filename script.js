@@ -119,3 +119,19 @@ function updateClock() {
     document.getElementById('time').innerText = hours + ":" + minutes + ':' + seconds + '.' + milliseconds + ' ' + ampm;
 }
 setInterval(updateClock, 1); // Update every millisecond
+
+function filter(tag) {
+    // Get all publications
+    const publications = document.querySelectorAll('.publication');
+    
+    // Hide all publications
+    publications.forEach(pub => pub.style.display = 'none');
+
+    // Show publications with the selected tag
+    publications.forEach(pub => {
+        const tags = pub.getAttribute('data-tags');
+        if(tags.includes(tag) || tag === 'all') {
+            pub.style.display = 'flex';
+        }
+    });
+}
