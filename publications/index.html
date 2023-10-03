@@ -76,13 +76,33 @@
     .publication:hover {
       background-color: #333;
     }
+    label .menu {
+      background: #ffb0f3;
+      box-shadow: 0 0 0 2px #ffb0f3;
+      }
+      label .hamburger,
+      label .hamburger:before,
+      label .hamburger:after {
+        background: #1b1b1b;
+        color: #1b1b1b;
+        box-shadow: 0 0 0 2px #1b1b1b;
+      }
+    
+      .menu-links li {
+        color: #000;
+      }
+      .menu-links li:hover {
+        color: #660066;
+      }
+      label input:checked + .menu {
+        box-shadow: 0 0 0 100vw #ffb0f3, 0 0 0 100vh #ffb0f3;
+      }
+    }
+
   </style>
 </head>
 <body>
   <div class="container">
-    <nav class="navbar">
-      <div class="logo">The Thursday Council</div>
-    </nav>
     <img src="https://files.catbox.moe/0kiwqv.png" class="headerimage" alt="The REAL News Site of Frederick High School">
     <div class="menu-container">
       <label>
