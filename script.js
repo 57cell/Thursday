@@ -141,12 +141,3 @@ function openSlideMenu() {
         menu.style.left = "-100%";
     }
 }
-
-function closeSlideMenu() {
-    var slideMenu = document.getElementById('slide-out-menu');
-    slideMenu.classList.add('hidden');
-}
-document.querySelector('.tab-button').addEventListener('mouseover', function() {
-    var slideMenu = document.getElementById('slide-out-menu');
-    slideMenu.classList.remove('hidden');
-});
