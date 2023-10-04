@@ -125,16 +125,18 @@
         /* Slide-out menu styles */
     .slide-out-menu {
         position: fixed;
-        top: 0;
-        left: -100%; /* Initially off-screen */
-        width: 80%;
-        max-width: 300px;
+        top: -100%; /* Start off-screen from the top */
+        left: 0;
+        width: 100%;
         background-color: #ffb0f3;
-        transition: left 0.3s;
-        z-index: 10; /* Making sure it appears above other content */
-        padding-top: 60px; /* Giving space for the close button */
+        transition: top 0.3s;
+        z-index: 10;
+        padding-top: 60px;
     }
-    
+    .tab-button:hover + .slide-out-menu,
+      .slide-out-menu:hover {
+          top: 0;
+    }
     .slide-out-menu ul {
         list-style-type: none;
         padding: 0;
@@ -176,7 +178,7 @@
   </style>
 </head>
 <body>
-  <button class="tab-button" onclick="openSlideMenu()">☰</button>
+  <button class="tab-button">☰</button>
   <div class="slide-out-menu" id="slide-out-menu">
       <ul>
           <li onclick="filter('all')">all</li>
