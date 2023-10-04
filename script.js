@@ -141,3 +141,14 @@ function openSlideMenu() {
         menu.style.left = "-100%";
     }
 }
+
+function closeSlideMenu() {
+    var menu = document.getElementById('slide-out-menu');
+    menu.classList.add('closed');
+    
+    // This ensures that the menu can be opened again after closing it
+    setTimeout(function() {
+        menu.classList.remove('closed');
+    }, 300); // Duration of the transition
+}
+
