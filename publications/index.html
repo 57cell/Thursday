@@ -161,15 +161,13 @@
         left: 10px;
         z-index: 20; /* Above the slide-out menu */
     }
-    
-    /* Media query to hide main menu items and show the tab button */
     @media screen and (max-width: 1080px) {
         .navbar .menu {
-            display: none; /* Hide main menu */
+            display: none;
         }
     
         .tab-button {
-            display: block; /* Show tab button */
+            display: block;
         }
     }
 
@@ -177,8 +175,7 @@
   </style>
 </head>
 <body>
-  <button class="tab-button" onclick="openSlideMenu()">☰</button> <!-- Tab button to trigger the slide-in menu -->
-  
+  <button class="tab-button" onclick="openSlideMenu()">☰</button>
   <div class="slide-out-menu" id="slide-out-menu">
       <ul>
           <li onclick="filter('all')">all</li>
@@ -190,6 +187,7 @@
           <li onclick="filter('toki-pona')">toki pona</li>
       </ul>
   </div>
+
   <div class="container">
     <div class="navbar-container">
   <nav class="navbar">
