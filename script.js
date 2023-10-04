@@ -141,3 +141,7 @@ function openSlideMenu() {
         menu.style.left = "-100%";
     }
 }
+
+function closeSlideMenu() {
+    document.getElementById('slide-out-menu').style.top = "-100%";
+}
