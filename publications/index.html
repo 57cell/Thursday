@@ -129,8 +129,7 @@
         left: -100%; /* Initially off-screen */
         width: 80%;
         max-width: 300px;
-        height: 100%;
-        background-color: #f9f9f9;
+        background-color: #ffb0f3;
         transition: left 0.3s;
         z-index: 10; /* Making sure it appears above other content */
         padding-top: 60px; /* Giving space for the close button */
@@ -144,22 +143,24 @@
     .slide-out-menu li {
         padding: 10px 20px;
         cursor: pointer;
+        color: #1b1b1b;
     }
     
     .slide-out-menu li:hover {
-        background-color: #eee;
+        background-color: #1b1b1b;
+        color: #ffb0f3;
     }
     
     .tab-button {
         display: none; /* Initially hidden */
-        font-size: 18px;
+        font-size: 30px;
         cursor: pointer;
         background: none;
         border: none;
         position: absolute;
         top: 10px;
         left: 10px;
-        z-index: 20; /* Above the slide-out menu */
+        z-index: 200; /* Above the slide-out menu */
     }
     @media screen and (max-width: 1080px) {
         .navbar .menu {
