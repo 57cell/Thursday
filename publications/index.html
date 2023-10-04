@@ -131,11 +131,12 @@
         background-color: #ffb0f3;
         transition: top 0.3s;
         z-index: 10;
-        padding-top: 60px;
+        padding-top: 62px;
     }
+    
     .tab-button:hover + .slide-out-menu,
       .slide-out-menu:hover {
-          top: 0;
+          top: -15;
     }
     .slide-out-menu ul {
         list-style-type: none;
@@ -181,13 +182,13 @@
   <button class="tab-button">☰</button>
   <div class="slide-out-menu" id="slide-out-menu">
       <ul>
-          <li onclick="filter('all')">all</li>
-          <li onclick="filter('political-extremism')">political extremism</li>
-          <li onclick="filter('shredded-cheese')">shredded cheese</li>
-          <li onclick="filter('vapid-poetry')">vapid poetry</li>
-          <li onclick="filter('uninformed-social-commentary')">uninformed social commentary</li>
-          <li onclick="filter('misinformation')">misinformation</li>
-          <li onclick="filter('toki-pona')">toki pona</li>
+          <li onclick="filter('all'); closeSlideMenu()">all</li>
+          <li onclick="filter('political-extremism'); closeSlideMenu()">political extremism</li>
+          <li onclick="filter('shredded-cheese'); closeSlideMenu()">shredded cheese</li>
+          <li onclick="filter('vapid-poetry'); closeSlideMenu()">vapid poetry</li>
+          <li onclick="filter('uninformed-social-commentary'); closeSlideMenu()">uninformed social commentary</li>
+          <li onclick="filter('misinformation'); closeSlideMenu()">misinformation</li>
+          <li onclick="filter('toki-pona'); closeSlideMenu()">toki pona</li>
       </ul>
   </div>
 
