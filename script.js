@@ -144,6 +144,9 @@ function openSlideMenu() {
 
 function closeSlideMenu() {
     var slideMenu = document.getElementById('slide-out-menu');
-    slideMenu.style.removeProperty('top');
+    slideMenu.classList.add('hidden');
 }
-
+document.querySelector('.tab-button').addEventListener('mouseover', function() {
+    var slideMenu = document.getElementById('slide-out-menu');
+    slideMenu.classList.remove('hidden');
+});
