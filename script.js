@@ -135,3 +135,12 @@ function filter(tag) {
         }
     });
 }
+
+function openSlideMenu() {
+    const menu = document.getElementById("slide-out-menu");
+    if (menu.style.left === "-100%") {
+        menu.style.left = "0";
+    } else {
+        menu.style.left = "-100%";
+    }
+}
