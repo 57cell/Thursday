@@ -165,8 +165,15 @@
         z-index: 200; /* Above the slide-out menu */
     }
     .closed {
-    top: -100% !important;
-}
+        top: -100% !important;
+    }
+    .menu-item img, .slide-out-menu img {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+
 
     @media screen and (max-width: 1000px) {
         .navbar .menu {
@@ -200,13 +207,27 @@
   <nav class="navbar">
       <div class="logo">The Thursday Council</div>
       <div class="menu">
-        <span class="menu-item" onclick="filter('all')">all</span>
-        <span class="menu-item" onclick="filter('political-extremism')">political extremism</span>
-        <span class="menu-item" onclick="filter('shredded-cheese')">shredded cheese</span>
-        <span class="menu-item" onclick="filter('vapid-poetry')">vapid poetry</span>
-        <span class="menu-item" onclick="filter('uninformed-social-commentary')">uninformed social commentary</span>
-        <span class="menu-item" onclick="filter('misinformation')">misinformation</span>
-        <span class="menu-item" onclick="filter('toki-pona')">toki pona</span>
+        <span class="menu-item" onclick="filter('all')"
+          <img src="https://files.catbox.moe/ubc332.svg" alt=""> all
+        </span>
+        <span class="menu-item" onclick="filter('political-extremism')"
+          <img src="https://files.catbox.moe/8vozhf.svg" alt=""> political extremism
+        </span>
+        <span class="menu-item" onclick="filter('shredded-cheese')"
+          <img src="https://files.catbox.moe/l16a4v.svg" alt=""> shredded cheese
+        </span>
+        <span class="menu-item" onclick="filter('vapid-poetry')"
+          <img src="https://files.catbox.moe/6ptqdq.svg" alt="">vapid poetry
+        </span>
+        <span class="menu-item" onclick="filter('uninformed-social-commentary')"
+          <img src="https://files.catbox.moe/25yn4f.svg" alt="">uninformed social commentary
+        </span>
+        <span class="menu-item" onclick="filter('misinformation')"
+          <img src="https://files.catbox.moe/cnrpf9.svg" alt="">misinformation
+        </span>
+        <span class="menu-item" onclick="filter('toki-pona')"
+          <img src="https://files.catbox.moe/tt3ger.svg" alt="">toki pona
+        </span>
       </div>
   </nav>
 </div>
