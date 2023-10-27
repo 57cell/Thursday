@@ -342,3 +342,11 @@ blockquote {
     margin-left: 3;                 /* Ensure blockquote is flush with its container on the left */
     font-style: italic;             /* Commonly, blockquotes are styled in italics, but this is optional */
 }
+.carrot {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.faq-item input[type=checkbox]:checked + label .carrot {
+  transform: rotate(90deg);
+}
