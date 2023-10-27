@@ -344,7 +344,7 @@ blockquote {
 }
 .carrot {
   display: inline-block;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
 .faq-item input[type=checkbox]:checked + label .carrot {
