@@ -49,7 +49,7 @@ body {
 }
 
 .navbar .logo {
-    font-family: 'Chomsky', serif;
+    font-family: 'Fancy Card Text', serif;
     font-size: calc(var(--min-font-size) + (var(--max-font-size) - var(--min-font-size)) * (100vw - var(--min-screen-size)) / (var(--max-screen-size) - var(--min-screen-size)));
     color: #000;
 }
