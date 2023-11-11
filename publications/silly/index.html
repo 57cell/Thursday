@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Silly</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="text/javascript" src="/script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar">
+      <div class="logo">The Thursday Council</div>
+    </nav>
+    <header class="header">
+      <h1>Silly</h1>
+      <h3>John Wilkes Booth • Thursday, November 11, 2023</h3>
+    </header>
+    <div class="menu-container">
+      <label>
+        <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
+          <div class="menu">
+            <span class="hamburger"></span>
+          </div>
+        </label>
+      <ul class="menu-links" id="menu-links">
+        <li onclick="navigateTo('home')">Home</li>
+        <li onclick="navigateTo('about')">About</li>
+        <li onclick="navigateTo('contact')">Contact</li>
+        <li onclick="navigateTo('join-us')">Join Us</li>
+        <li onclick="navigateTo('store')">Store</li>
+        <li onclick="navigateTo('publications')">Publications</li>
+      </ul>
+    </div>
+    <main>
+      <img src="https://files.catbox.moe/zwlcxn.png" alt="">
+    </main>
+  </div>
+  <script async defer src="https://scripts.withcabin.com/hello.js"></script>
+</body>
+</html>
