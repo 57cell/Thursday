@@ -1,95 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Thursday Council</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script>
-    // Asynchronously fetch product data from Printify when the page loads
-    window.addEventListener('DOMContentLoaded', (event) => {
-      fetchProducts();
-    });
-
-    async function fetchProducts() {
-      try {
-        // Replace 'your_printify_api_endpoint' with the actual endpoint provided by Printify
-        const response = await fetch('eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzN2Q0YmQzMDM1ZmUxMWU5YTgwM2FiN2VlYjNjY2M5NyIsImp0aSI6IjQ4NGQxOTllNDA4YTBkNzY2ZTE4MDY4N2VlZDdiM2NjNTg4MDU0Y2E5MDcxZjFjY2Y5MTZhMzlhN2E3YmRjOGNjYTIwNzk1Y2E0NTJhNmZhIiwiaWF0IjoxNzA2NzU0OTEzLjk4MzY1OSwibmJmIjoxNzA2NzU0OTEzLjk4MzY2MSwiZXhwIjoxNzM4Mzc3MzEzLjk3NDA5OSwic3ViIjoiMTQ5MzY2MDIiLCJzY29wZXMiOlsic2hvcHMubWFuYWdlIiwic2hvcHMucmVhZCIsImNhdGFsb2cucmVhZCIsIm9yZGVycy5yZWFkIiwib3JkZXJzLndyaXRlIiwicHJvZHVjdHMucmVhZCIsInByb2R1Y3RzLndyaXRlIiwid2ViaG9va3MucmVhZCIsIndlYmhvb2tzLndyaXRlIiwidXBsb2Fkcy5yZWFkIiwidXBsb2Fkcy53cml0ZSIsInByaW50X3Byb3ZpZGVycy5yZWFkIl19.AQlrd7ZWO7MqGyJ_lQII26cPmC7g6cVpqYCt-jU_6L39vGAgjI-7qSFZ2EG8Wih-Eg719xqd-5foksp4FXM', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-            // Add your Printify API key here
-            'Authorization': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzN2Q0YmQzMDM1ZmUxMWU5YTgwM2FiN2VlYjNjY2M5NyIsImp0aSI6IjQ4NGQxOTllNDA4YTBkNzY2ZTE4MDY4N2VlZDdiM2NjNTg4MDU0Y2E5MDcxZjFjY2Y5MTZhMzlhN2E3YmRjOGNjYTIwNzk1Y2E0NTJhNmZhIiwiaWF0IjoxNzA2NzU0OTEzLjk4MzY1OSwibmJmIjoxNzA2NzU0OTEzLjk4MzY2MSwiZXhwIjoxNzM4Mzc3MzEzLjk3NDA5OSwic3ViIjoiMTQ5MzY2MDIiLCJzY29wZXMiOlsic2hvcHMubWFuYWdlIiwic2hvcHMucmVhZCIsImNhdGFsb2cucmVhZCIsIm9yZGVycy5yZWFkIiwib3JkZXJzLndyaXRlIiwicHJvZHVjdHMucmVhZCIsInByb2R1Y3RzLndyaXRlIiwid2ViaG9va3MucmVhZCIsIndlYmhvb2tzLndyaXRlIiwidXBsb2Fkcy5yZWFkIiwidXBsb2Fkcy53cml0ZSIsInByaW50X3Byb3ZpZGVycy5yZWFkIl19.AQlrd7ZWO7MqGyJ_lQII26cPmC7g6cVpqYCt-jU_6L39vGAgjI-7qSFZ2EG8Wih-Eg719xqd-5foksp4FXM'
-          }
-        });
-        const products = await response.json();
-        // Call a function to update the page with the new products
-        displayProducts(products);
-      } catch (error) {
-        console.error('Error fetching products:', error);
-      }
-    }
-
-    function displayProducts(products) {
-      const productsContainer = document.getElementById('products-container');
-      // Clear out any existing products
-      productsContainer.innerHTML = '';
-
-      // Create HTML for each product
-      products.forEach(product => {
-        const productElement = document.createElement('div');
-        productElement.className = 'border border-gray-800 p-4';
-        productElement.innerHTML = `
-          <img src="${product.image}" alt="${product.name}" class="mb-2">
-          <h3 class="text-lg">${product.name}</h3>
-          <div class="flex items-center mb-1">
-            <i class="fas fa-star text-yellow-500"></i>
-            <span class="ml-2">${product.rating} (${product.reviewCount})</span>
-          </div>
-          <p class="text-lg">$${product.price}</p>
-        `;
-        // Append the new product to the container
-        productsContainer.appendChild(productElement);
-      });
-    }
-  </script>
-</head>
-<body class="bg-gray-900 text-white">
-  <header class="border-b border-gray-800 p-4">
-    <div class="flex items-center justify-between max-w-6xl mx-auto">
-      <h1 class="text-xl">The Thursday Council</h1>
-      <div>
-        <a href="#" class="hover:text-gray-300"><i class="fas fa-shopping-cart"></i></a>
-      </div>
-    </div>
-  </header>
-  <main class="py-10">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex justify-between items-center mb-4">
-        <h2 class="text-2xl">All products</h2>
-        <div>
-          <label for="sort" class="sr-only">Sort by</label>
-          <select id="sort" class="bg-gray-800 text-white border border-gray-700 rounded p-2">
-            <option>Newest arrivals</option>
-          </select>
-        </div>
-      </div>
-      <div class="grid grid-cols-3 gap-4">
-        <!-- Product items would be dynamically loaded here. -->
-        <!-- Static example for one product: -->
-        <div class="border border-gray-800 p-4">
-          <img src="https://placehold.co/300x300" alt="Placeholder image for len pi kijetesantakalu mute" class="mb-2">
-          <h3 class="text-lg">len pi kijetesantakalu mute</h3>
-          <div class="flex items-center mb-1">
-            <i class="fas fa-star text-yellow-500"></i>
-            <span class="ml-2">5.0 (1)</span>
-          </div>
-          <p class="text-lg">$22.85</p>
-        </div>
-        <!-- Repeat for each product -->
-      </div>
-    </div>
-  </main>
-</body>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0;url=https://the-thursday-council.printify.me/products">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    If you're not redirected, <a href="https://the-thursday-council.printify.me/products">click here</a>.
+    <script async defer src="https://scripts.withcabin.com/hello.js"></script>
+  </body>
 </html>
