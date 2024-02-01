@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0;url=https://the-thursday-council.printify.me/products">
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    If you're not redirected, <a href="https://the-thursday-council.printify.me/products">click here</a>.
-    <script async defer src="https://scripts.withcabin.com/hello.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Thursday Council</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-900 text-white">
+  <header class="border-b border-gray-800 p-4">
+    <div class="flex items-center justify-between max-w-6xl mx-auto">
+      <h1 class="text-xl">The Thursday Council</h1>
+      <div>
+        <a href="#" class="hover:text-gray-300"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+  </header>
+  <main class="py-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl">All products</h2>
+        <div>
+          <label for="sort" class="sr-only">Sort by</label>
+          <select id="sort" class="bg-gray-800 text-white border border-gray-700 rounded p-2">
+            <option>Newest arrivals</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-4">
+        <!-- Product items would be dynamically loaded here. -->
+        <!-- Static example for one product: -->
+        <div class="border border-gray-800 p-4">
+          <img src="https://placehold.co/300x300" alt="Placeholder image for len pi kijetesantakalu mute" class="mb-2">
+          <h3 class="text-lg">len pi kijetesantakalu mute</h3>
+          <div class="flex items-center mb-1">
+            <i class="fas fa-star text-yellow-500"></i>
+            <span class="ml-2">5.0 (1)</span>
+          </div>
+          <p class="text-lg">$22.85</p>
+        </div>
+        <!-- Repeat for each product -->
+      </div>
+    </div>
+  </main>
+</body>
 </html>
