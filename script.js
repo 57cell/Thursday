@@ -9,27 +9,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const year = today.getFullYear();
     let calendarBody = '';
     let firstDay = new Date(year, month, 1);
-    for (let i = 0; i < firstDay.getDay(); i++) {
+    let emptyCells = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1;
+    for (let i = 0; i < emptyCells; i++) {
       calendarBody += '<td></td>';
     }
-
+  
     for (let i = 1; i <= 31; i++) {
       const dayDate = new Date(year, month, i);
       if (dayDate.getMonth() !== month) break;
+  
       if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
         calendarBody += `<td id="day-${year}-${month + 1}-${i}" class="current-day">${i}</td>`;
       } else {
         calendarBody += `<td id="day-${year}-${month + 1}-${i}">${i}</td>`;
       }
-      if (dayDate.getDay() === 6) {
+      
+      if (dayDate.getDay() === 0) {
         calendarBody += '</tr><tr>';
       }
     }
-
+  
     document.querySelector('.calendar tbody').innerHTML += `<tr>${calendarBody}</tr>`;
   }
   
   createCalendar();
+
   
   var today = new Date().getDate();
   var calendarCells = document.querySelectorAll(".calendar td");
