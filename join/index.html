@@ -100,22 +100,66 @@
         <input type="submit" value="Submit">
     </form>
     <div class="menu-container">
-        <div class="menu-container">
-            <label>
-                <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
-                <div class="menu">
-                    <span class="hamburger"></span>
-                </div>
-            </label>
-            <ul class="menu-links" id="menu-links">
-                <li onclick="navigateTo('home')">Home</li>
-                <li onclick="navigateTo('about')">About</li>
-                <li onclick="navigateTo('contact')">Contact</li>
-                <li onclick="navigateTo('join-us')">Join Us</li>
-                <li onclick="navigateTo('store')">Store</li>
-                <li onclick="navigateTo('publications')">Publications</li>
-            </ul>
+      <div class="menu-container">
+        <label>
+          <input type="checkbox" id="menu-toggle" onchange="toggleMenuLinks()">
+          <div class="menu">
+            <span class="hamburger"></span>
+          </div>
+        </label>
+        <div class="optionssectionmenu" id="optionssectionmenu"
+          style="font-size: 40px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -70%); height: 300px; width: 300px; margin: auto;">
+          <div class="icons-container">
+            <span class="icon" onclick="navigateTo('home')" style="transform: translate(0px, -175px);">
+              <svg xmlns="http://www.w3.org/2000/svg" height="300" width="300" viewBox="0 -960 960 960" aria-label="Home">
+                <path
+                  d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+              </svg>
+              <div class="icon-text">Home</div>
+            </span>
+            <span class="icon" onclick="navigateTo('about')" style="transform: translate(-150px, -87px);">
+              <svg xmlns="http://www.w3.org/2000/svg" height="300" width="300" viewBox="0 -960 960 960"
+                aria-label="About">
+                <path
+                  d="M440-280h80v-240h-80v240Zm40-320q17 0 28.5-11.5T520-640q0-17-11.5-28.5T480-680q-17 0-28.5 11.5T440-640q0 17 11.5 28.5T480-600Zm0 520q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+              </svg>
+              <div class="icon-text">About</div>
+            </span>
+            <span class="icon" onclick="navigateTo('contact')" style="transform: translate(150px, -87px);">
+              <svg xmlns="http://www.w3.org/2000/svg" height="300" viewBox="0 -960 960 960" width="300"
+                aria-label="Contact">
+                <path
+                  d="M480-400q33 0 56.5-23.5T560-480q0-33-23.5-56.5T480-560q-33 0-56.5 23.5T400-480q0 33 23.5 56.5T480-400ZM320-240h320v-23q0-24-13-44t-36-30q-26-11-53.5-17t-57.5-6q-30 0-57.5 6T369-337q-23 10-36 30t-13 44v23ZM720-80H240q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80Zm0-80v-446L526-800H240v640h480Zm-480 0v-640 640Z" />
+              </svg>
+              <div class="icon-text">Contact</div>
+            </span>
+            <span class="icon" onclick="navigateTo('join-us')" style="transform: translate(150px, 87px);">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
+                aria-label="Join Us">
+                <path
+                  d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z" />
+              </svg>
+              <div class="icon-text">Join</div>
+            </span>
+            <span class="icon" onclick="navigateTo('store')" style="transform: translate(0px, 175px);">
+              <svg xmlns="http://www.w3.org/2000/svg" height="300" viewBox="0 -960 960 960" width="300"
+                aria-label="Store">
+                <path
+                  d="M444-200h70v-50q50-9 86-39t36-89q0-42-24-77t-96-61q-60-20-83-35t-23-41q0-26 18.5-41t53.5-15q32 0 50 15.5t26 38.5l64-26q-11-35-40.5-61T516-710v-50h-70v50q-50 11-78 44t-28 74q0 47 27.5 76t86.5 50q63 23 87.5 41t24.5 47q0 33-23.5 48.5T486-314q-33 0-58.5-20.5T390-396l-66 26q14 48 43.5 77.5T444-252v52Zm36 120q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+              </svg>
+              <div class="icon-text">Store</div>
+            </span>
+            <span class="icon" onclick="navigateTo('publications')" style="transform: translate(-150px, 87px);">
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
+                aria-label="Publications">
+                <path
+                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h440l200 200v440q0 33-23.5 56.5T760-120H200Zm0-80h560v-400H600v-160H200v560Zm80-80h400v-80H280v80Zm0-320h200v-80H280v80Zm0 160h400v-80H280v80Zm-80-320v160-160 560-560Z" />
+              </svg>
+              <div class="icon-text">Publications</div>
+            </span>
+          </div>
         </div>
+      </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/openpgp/4.10.10/openpgp.min.js" referrerpolicy="no-referrer"></script>
     </div>
 </body>

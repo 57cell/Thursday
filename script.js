@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (dayDate.getMonth() !== month) break;
   
       if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-        calendarBody += `<td id="day-${year}-${month + 1}-${i}" class="current-day">${i}</td>`;
+        calendarBody += `<td id="day-${year}-${month + 1}-${i}" class="current-day" style="text-align: center;">${i}</td>`;
       } else {
-        calendarBody += `<td id="day-${year}-${month + 1}-${i}">${i}</td>`;
+        calendarBody += `<td id="day-${year}-${month + 1}-${i}" style="text-align: center;">${i}</td>`;
       }
       
       if (dayDate.getDay() === 0) {
@@ -70,24 +70,24 @@ function navigateTo(page) {
 }
 
 function toggleMenuLinks(isContainerClick = false) {
-    var menuLinks = document.getElementById('menu-links');
+    var options = document.getElementById('optionssectionmenu');
     var toggle = document.getElementById('menu-toggle');
-    
+
     if (isContainerClick) {
         toggle.checked = !toggle.checked;
     }
 
     if (toggle.checked) {
-        menuLinks.style.display = 'block';
-        menuLinks.style.pointerEvents = 'auto';
+        options.style.display = 'block';
         setTimeout(function() {
-            menuLinks.style.opacity = '1';
-        }, 0);
+            options.style.opacity = '1';
+            options.style.pointerEvents = 'auto';
+        }, 10);
     } else {
-        menuLinks.style.opacity = '0';
-        menuLinks.style.pointerEvents = 'none';
+        options.style.opacity = '0';
+        options.style.pointerEvents = 'none';
         setTimeout(function() {
-            menuLinks.style.display = 'none';
+            options.style.display = 'none';
         }, 500);
     }
 }
